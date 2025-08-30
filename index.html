@@ -473,17 +473,20 @@
     <!-- Início da Marca d'água Hyper Tech -->
 <style>
   /* Estilo da marca d'água */
-  .watermark-hypertech {
-    position: fixed;         /* Fica fixo na tela, mesmo com rolagem */
-    bottom: 10px;            /* 10 pixels de distância do rodapé */
-    right: 15px;             /* 15 pixels de distância da direita */
-    opacity: 0.6;            /* Transparência de 60% */
-    font-size: 12px;         /* Tamanho da fonte pequeno e discreto */
-    font-family: Arial, sans-serif; /* Fonte comum e legível */
-    color: #333;             /* Cor cinza escuro (bom para fundos claros) */
-    z-index: 9999;           /* Garante que fique por cima de tudo */
-    transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
-  }
+    .watermark-hypertech {
+      position: fixed;         /* Fica fixo na tela, mesmo com rolagem */
+      bottom: 10px;            /* 10 pixels de distância do rodapé */
+      left: 15px;              /* 15 pixels de distância da esquerda */
+      opacity: 0.6;            /* Transparência de 60% */
+      font-size: 12px;         /* Tamanho da fonte pequeno e discreto */
+      font-family: Arial, sans-serif; /* Fonte comum e legível */
+      color: #FFF;             /* Cor branca para melhor contraste */
+      z-index: 9999;           /* Garante que fique por cima de tudo */
+      transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      padding: 4px 8px; /* Espaçamento interno */
+      border-radius: 4px; /* Cantos arredondados */
+    }
 
   /* Ao passar o mouse, a marca fica 100% visível */
   .watermark-hypertech:hover {
