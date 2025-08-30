@@ -1,1 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claudia Cakes - Confeitaria Fina</title>
 
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="description" content="Claudia Cakes – Confeitaria Fina. Experiência em forma de doce. Encomendas personalizadas & pronta-entrega." />
+    <meta name="author" content="Claudia Cakes" />
+    <meta name="keywords" content="confeitaria, bolos, doces, claudia cakes, palmeira dos indios, estrela de alagoas" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Claudia Cakes - Confeitaria Fina" />
+    <meta property="og:description" content="Experiência em forma de doce. 🎂 Sob medida para momentos inesquecíveis. 🌸 Encomendas personalizadas & pronta-entrega." />
+    <meta property="og:image" content="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Claudia Cakes - Confeitaria Fina" />
+    <meta property="twitter:description" content="Experiência em forma de doce. 🎂 Sob medida para momentos inesquecíveis. 🌸 Encomendas personalizadas & pronta-entrega." />
+    <meta property="twitter:image" content="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" type="image/jpeg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Roboto', 'sans-serif'],
+              'display': ['Bebas Neue', 'cursive'],
+            },
+            colors: {
+              'brand-pink': '#E53A89',
+              'brand-pink-dark': '#C02A6E',
+            },
+            keyframes: {
+              'logo-glow': {
+                '0%, 100%': { boxShadow: '0 0 15px 5px rgba(229, 58, 137, 0.4), 0 0 5px 1px rgba(229, 58, 137, 0.3)' },
+                '50%': { boxShadow: '0 0 25px 8px rgba(229, 58, 137, 0.6), 0 0 10px 2px rgba(229, 58, 137, 0.5)' },
+              },
+              'page-load-fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'modal-fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'modal-slide-in-up': {
+                '0%': { transform: 'translateY(30px) scale(0.98)', opacity: '0' },
+                '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+              },
+              'shine': {
+                '0%': { transform: 'translateX(-100%) skewX(-20deg)' },
+                '100%': { transform: 'translateX(200%) skewX(-20deg)' },
+              },
+               'barber-pole': {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '56px 0' },
+              }
+            },
+            animation: {
+              'logo-glow': 'logo-glow 4s ease-in-out infinite',
+              'page-load': 'page-load-fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
+              'modal-fade-in': 'modal-fade-in 0.3s ease-out forwards',
+              'modal-slide-in-up': 'modal-slide-in-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              'shine': 'shine 1.5s infinite linear',
+              'barber-pole': 'barber-pole 1s linear infinite',
+            },
+            backgroundImage: {
+              'grain-texture': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- React and Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      body {
+        background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), url('https://img.freepik.com/fotos-gratis/close-up-cupcakes-bonitos_23-2147758340.jpg?semt=ais_hybrid&w=740&q=80');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+      }
+    </style>
+
+  <!-- Início da Marca d'água Hyper Tech -->
+  <style>
+    /* Estilo da marca d'água */
+    .watermark-hypertech {
+      position: fixed;         /* Fica fixo na tela, mesmo com rolagem */
+      bottom: 10px;            /* 10 pixels de distância do rodapé */
+      right: 15px;             /* 15 pixels de distância da direita */
+      opacity: 0.6;            /* Transparência de 60% */
+      font-size: 12px;         /* Tamanho da fonte pequeno e discreto */
+      font-family: Arial, sans-serif; /* Fonte comum e legível */
+      color: #FFF;             /* Cor branca para melhor contraste */
+      z-index: 9999;           /* Garante que fique por cima de tudo */
+      transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      padding: 4px 8px; /* Espaçamento interno */
+      border-radius: 4px; /* Cantos arredondados */
+    }
+
+    /* Ao passar o mouse, a marca fica 100% visível */
+    .watermark-hypertech:hover {
+      opacity: 1;
+    }
+
+    /* Estilo do link */
+    .watermark-hypertech a {
+      color: inherit;          /* Usa a mesma cor do texto */
+      text-decoration: none;   /* Remove o sublinhado padrão */
+      font-weight: bold;
+    }
+
+    /* Adiciona sublinhado no link ao passar o mouse */
+    .watermark-hypertech a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <!-- Fim da Marca d'água -->
+
+</head>
+  <body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+      // All React code is now in this script block
+
+      // From components/Icons.tsx
+      const WhatsappIcon = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle-more">
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+          <path d="M8 12h.01" />
+          <path d="M12 12h.01" />
+          <path d="M16 12h.01" />
+        </svg>
+      );
+
+      const UserIcon = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user-round">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M20 21a8 8 0 0 0-16 0" />
+        </svg>
+      );
+
+      const MenuIcon = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-book-open-text">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          <path d="M6 8h2" />
+          <path d="M6 12h2" />
+          <path d="M16 8h2" />
+          <path d="M16 12h2" />
+        </svg>
+      );
+
+      const InstagramIcon = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      );
+
+      const CloseIcon = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      );
+
+      // From components/LinkButton.tsx
+      const LinkButton = ({ href, onClick, text, icon, variant, isExternal = false }) => {
+        const baseClasses = "group relative w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg font-bold text-center transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/30 overflow-hidden";
+        
+        const variantClasses = {
+          primary: "bg-brand-pink text-white hover:bg-brand-pink-dark shadow-lg shadow-brand-pink/30 hover:shadow-xl hover:shadow-brand-pink/40 focus:ring-brand-pink",
+          secondary: "bg-white/5 border border-white/10 text-white hover:bg-white/10 backdrop-blur-sm focus:ring-white/50"
+        };
+
+        const commonProps = {
+          className: `${baseClasses} ${variantClasses[variant]}`,
+          target: isExternal ? "_blank" : undefined,
+          rel: isExternal ? "noopener noreferrer" : undefined,
+        };
+
+        const content = (
+          <React.Fragment>
+            <span className="z-10">{icon}</span>
+            <span className="z-10">{text}</span>
+            <span className="absolute top-0 left-0 h-full w-20 bg-white/30 transform -skew-x-12 -translate-x-full group-hover:translate-x-[30rem] transition-transform duration-700 ease-in-out z-10"></span>
+          </React.Fragment>
+        );
+
+        if (href) {
+          return (
+            <a href={href} {...commonProps}>
+              {content}
+            </a>
+          );
+        }
+
+        return (
+          <button onClick={onClick} {...commonProps}>
+            {content}
+          </button>
+        );
+      };
+
+      // From components/Modal.tsx
+      const Modal = ({ isOpen, onClose, children }) => {
+        if (!isOpen) {
+          return null;
+        }
+
+        return (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-modal-fade-in"
+            onClick={onClose}
+          >
+            <div
+              className="relative w-full max-w-lg bg-black/50 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-2xl animate-modal-slide-in-up"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-soft-light"></div>
+              <button 
+                onClick={onClose} 
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2 focus:ring-offset-black/50 rounded-full p-1"
+                aria-label="Fechar modal"
+              >
+                <CloseIcon />
+              </button>
+              {children}
+            </div>
+          </div>
+        );
+      };
+
+      // From App.tsx
+      const App = () => {
+        const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+        return (
+          <div className="min-h-screen w-full flex items-center justify-center p-4 font-sans text-white">
+            <div 
+              className="w-full max-w-md mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden animate-page-load"
+            >
+              <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-soft-light"></div>
+              
+              <header className="flex flex-col items-center text-center">
+                <div className="relative mb-4">
+                  <div className="absolute -inset-1.5 bg-gradient-to-br from-brand-pink to-purple-600 rounded-full animate-logo-glow"></div>
+                  <img 
+                    src="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" 
+                    alt="Claudia Cakes Logo" 
+                    className="relative w-28 h-28 rounded-full border-2 border-white/20"
+                  />
+                </div>
+                <h1 className="font-display text-5xl tracking-widest bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
+                  Claudia Cakes
+                </h1>
+                <p className="text-sm text-gray-300 mt-2 uppercase tracking-widest">
+                  Confeitaria Fina <br/> Experiência em forma de doce
+                </p>
+                <p className="text-xs text-gray-400 mt-2">
+                  🎂 Sob medida para momentos inesquecíveis 🌸
+                </p>
+              </header>
+
+              <main className="mt-8 flex flex-col gap-4">
+                <div className="flex flex-col items-center">
+                  <img 
+                    src="https://ugc.production.linktr.ee/4c029ae5-b4ed-4bed-a3ee-29c3372ccc9f_image.png?io=true&size=thumbnail-feature-v1_0" 
+                    alt="Promoção" 
+                    className="rounded-lg mb-4 w-full object-cover"
+                  />
+                  <LinkButton 
+                    href="https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0" 
+                    text="Whatsapp - Palmeira dos Índios" 
+                    icon={<WhatsappIcon />} 
+                    variant="primary"
+                    isExternal={true}
+                  />
+                </div>
+                
+                <LinkButton 
+                  href="https://api.whatsapp.com/message/GB7I5WIV3E4DH1?autoload=1&app_absent=0" 
+                  text="Whatsapp - Estrela de Alagoas" 
+                  icon={<WhatsappIcon />} 
+                  variant="primary"
+                  isExternal={true}
+                />
+
+                <div className="relative my-4 flex items-center justify-center">
+                   <div className="h-1 w-full bg-white/10 rounded-full"></div>
+                   <div 
+                      className="absolute top-0 left-0 h-1 w-full rounded-full opacity-75" 
+                      style={{
+                        backgroundImage: 'repeating-linear-gradient(-45deg, #E53A89, #E53A89 10px, transparent 10px, transparent 20px)',
+                        backgroundSize: '56px 56px',
+                        animation: 'barber-pole 1s linear infinite'
+                      }}
+                    ></div>
+                </div>
+
+                <LinkButton 
+                  onClick={() => setIsModalOpen(true)}
+                  text="Quem Somos?" 
+                  icon={<UserIcon />} 
+                  variant="secondary"
+                />
+                <LinkButton 
+                  href="https://www.canva.com/design/DAGtoSkJMG4/BmEpZXibMzbntJG0J1Tb_g/view" 
+                  text="Cardápio Claudia Cakes" 
+                  icon={<MenuIcon />} 
+                  variant="secondary"
+                  isExternal={true}
+                />
+                <LinkButton 
+                  href="https://www.instagram.com/claudia_cakes1/" 
+                  text="Siga-nos no Instagram" 
+                  icon={<InstagramIcon />} 
+                  variant="secondary"
+                  isExternal={true}
+                />
+              </main>
+            </div>
+
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+              <h2 className="font-display text-4xl tracking-wider text-center mb-4 text-brand-pink">Quem Somos</h2>
+              <p className="text-gray-200 text-center leading-relaxed">
+                Na Claudia Cakes, cada doce é uma obra de arte, criada com paixão e os ingredientes mais finos. Somos uma confeitaria dedicada a transformar seus momentos especiais em memórias inesquecíveis, com bolos e doces personalizados que encantam os olhos e o paladar.
+              </p>
+              <p className="text-gray-300 text-center mt-4 text-sm">
+                Nossa missão é levar a felicidade em forma de doce, oferecendo uma experiência única desde a encomenda até a última mordida.
+              </p>
+            </Modal>
+          </div>
+        );
+      };
+
+      // From index.tsx (rendering logic)
+      const rootElement = document.getElementById('root');
+      if (!rootElement) {
+        throw new Error("Could not find root element to mount to");
+      }
+
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      );
+    </script>
+    
+    <!-- Início da Marca d'água Hyper Tech -->
+    <div class="watermark-hypertech">
+      Desenvolvido por <a href="https://www.hyper-tech.online/" target="_blank" rel="noopener noreferrer">Hyper Tech</a>
+    </div>
+    <!-- Fim da Marca d'água -->
+  </body>
+</html>
