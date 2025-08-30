@@ -470,5 +470,42 @@
         </React.StrictMode>
       );
     </script>
+    <!-- Início da Marca d'água Hyper Tech -->
+<style>
+  /* Estilo da marca d'água */
+  .watermark-hypertech {
+    position: fixed;         /* Fica fixo na tela, mesmo com rolagem */
+    bottom: 10px;            /* 10 pixels de distância do rodapé */
+    right: 15px;             /* 15 pixels de distância da direita */
+    opacity: 0.6;            /* Transparência de 60% */
+    font-size: 12px;         /* Tamanho da fonte pequeno e discreto */
+    font-family: Arial, sans-serif; /* Fonte comum e legível */
+    color: #333;             /* Cor cinza escuro (bom para fundos claros) */
+    z-index: 9999;           /* Garante que fique por cima de tudo */
+    transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
+  }
+
+  /* Ao passar o mouse, a marca fica 100% visível */
+  .watermark-hypertech:hover {
+    opacity: 1;
+  }
+
+  /* Estilo do link */
+  .watermark-hypertech a {
+    color: inherit;          /* Usa a mesma cor do texto */
+    text-decoration: none;   /* Remove o sublinhado padrão */
+    font-weight: bold;
+  }
+
+  /* Adiciona sublinhado no link ao passar o mouse */
+  .watermark-hypertech a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="watermark-hypertech">
+  Desenvolvido por <a href="https://www.hyper-tech.online/" target="_blank" rel="noopener noreferrer">Hyper Tech</a>
+</div>
+<!-- Fim da Marca d'água -->
   </body>
 </html>
