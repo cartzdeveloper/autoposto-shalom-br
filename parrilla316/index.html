@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site em Manutenção</title>
+    <!-- 
+    ================================================================================
+    AVISO AO PROPRIETÁRIO DO SITE:
+    
+    O seu site está temporariamente em modo de manutenção devido a pendências 
+    administrativas que precisam ser resolvidas.
+    
+    Para normalizar o acesso e obter mais detalhes, por favor, entre em contato conosco.
+    
+    Esta mensagem é um comentário no código e não é visível aos visitantes.
+    ================================================================================
+    -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 40px 20px;
+        }
+        .maintenance-gif {
+            /* --- ALTERAÇÃO AQUI: Imagem maior --- */
+            width: 180px;
+            height: 180px;
+            margin-bottom: 35px; /* Espaçamento aumentado */
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Regras para telas menores (Responsividade) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .maintenance-gif {
+                 /* --- ALTERAÇÃO AQUI: Tamanho ajustado para celular --- */
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGk3MnZnenRidDZ6djdqcHI5ZXV0cnkzdmZ4bGh1dnJhbTJocmlsNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/UvPvsX9oMlMWs/giphy.gif" alt="Ícone de Manutenção" class="maintenance-gif">
+        <h1>Voltamos em Breve</h1>
+        <p>No momento, estamos realizando uma manutenção programada para melhorar sua experiência em nosso site. Agradecemos a paciência.</p>
+    </div>
+</body>
+</html>
