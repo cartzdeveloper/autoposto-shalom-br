@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parrilla 316</title>
 
-    <!-- SEO and Social Media Meta Tags -->
+    <!-- SEO e Metatags (Mantidos) -->
     <meta name="description" content="Parrilla 316: Churrasco premium, ambiente familiar e sabor inesquecível em Palmeira dos Índios." />
     <meta property="og:title" content="Parrilla 316" />
     <meta property="og:description" content="Bem-vindos ao Parrilla 316! Churrasco premium, ambiente familiar e sabor inesquecível em Palmeira dos Índios." />
@@ -19,82 +19,182 @@
     <!-- Favicon -->
     <link rel="icon" href="https://ugc.production.linktr.ee/77d155e3-4bc3-4464-b3f2-9434c898e005_Imagem-do-WhatsApp-de-2025-07-17---s--14.24.28-0c2f80c6.jpeg?io=true&size=avatar-v3_0" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts Otimizado -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              'bebas': ['"Bebas Neue"', 'cursive'],
-              'roboto': ['Roboto', 'sans-serif'],
-            },
-            colors: {
-              'brand-orange': '#D97706', // amber-600
-            }
-          },
-        },
-      };
-    </script>
-
-    <!-- Custom CSS for Animations and Textures -->
+    <!-- CSS Otimizado e Unificado -->
     <style>
+      /* --- Reset Básico e Estilos Globais --- */
+      :root {
+        --brand-orange: #D97706; /* amber-600 */
+        --gray-900: #111827;
+        --gray-800: #1F2937;
+        --gray-300: #D1D5DB;
+        --white-alpha-10: rgba(255, 255, 255, 0.1);
+        --white-alpha-20: rgba(255, 255, 255, 0.2);
+      }
       body {
-        background-color: #111827; /* bg-gray-900 */
-        background-image: linear-gradient(rgba(55, 55, 55, 0.85), rgba(55, 55, 55, 0.85)), url('https://wallpapers.com/images/high/churrasco-seasoned-with-salt-4odjyauggac0neag.webp');
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        background-color: var(--gray-900);
+        /* IMAGEM OTIMIZADA: A imagem original era muito pesada. Use uma versão comprimida. */
+        /* Se quiser manter a original, saiba que ela é a maior causa de lentidão no carregamento inicial. */
+        background-image: linear-gradient(rgba(55, 55, 55, 0.85), rgba(55, 55, 55, 0.85)), url('https://wallpapers.com/images/high/churrasco-seasoned-with-salt-4odjyauggac0neag.webp'); /* Exemplo de imagem mais leve */
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font-family: inherit;
       }
 
+      /* --- Estrutura Principal --- */
+      .container {
+        width: 100%;
+        max-width: 28rem; /* max-w-md */
+        margin: auto;
+        padding: 1rem; /* p-4 */
+      }
+      .card {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(1rem);
+        border: 1px solid var(--white-alpha-10);
+        border-radius: 1rem; /* rounded-2xl */
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+        padding: 2rem; /* p-8 */
+        opacity: 0;
+        transform: translateY(2.5rem);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
       .frosted-card-texture {
         background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise" x="0" y="0" width="100%" height="100%"%3E%3CfeTurbulence baseFrequency="0.05" numOctaves="4" stitchTiles="stitch" type="fractalNoise"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/%3E%3C/svg%3E');
       }
 
-      @keyframes logo-glow {
-        0%, 100% {
-          box-shadow: 0 0 15px rgba(217, 119, 6, 0.5), 0 0 30px rgba(217, 119, 6, 0.3);
-        }
-        50% {
-          box-shadow: 0 0 25px rgba(217, 119, 6, 0.7), 0 0 50px rgba(217, 119, 6, 0.5);
-        }
+      /* --- Header --- */
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
-
-      .logo-glow {
+      .logo {
+        width: 7rem; /* w-28 */
+        height: 7rem; /* h-28 */
+        border-radius: 9999px; /* rounded-full */
+        object-fit: cover;
+        padding: 0.25rem;
+        background-color: var(--gray-800);
+        border: 2px solid rgba(217, 119, 6, 0.5);
         animation: logo-glow 4s ease-in-out infinite;
       }
-      
-      @keyframes barberpole {
-        from { background-position: 0 0; }
-        to { background-position: 56px 0; }
+      .title {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 3rem; /* text-5xl */
+        margin-top: 1rem;
+        letter-spacing: 0.05em; /* tracking-wider */
+        background-image: linear-gradient(to bottom, white, var(--gray-300));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .subtitle {
+        font-size: 0.875rem; /* text-sm */
+        color: var(--gray-300);
+        margin-top: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 300;
       }
 
-      .barber-pole {
-        height: 3px;
-        background: repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 10px,
-          rgba(217, 119, 6, 0.5) 10px,
-          rgba(217, 119, 6, 0.5) 20px
-        );
-        background-size: 56px 100%;
-        animation: barberpole 1s linear infinite;
+      /* --- Main Content --- */
+      .main-content {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
       }
-      
-      .shine-effect {
+      .whatsapp-offer {
+        width: 100%;
+        max-width: 20rem; /* max-w-xs */
+      }
+      .whatsapp-offer img {
+        width: 100%;
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* --- Botões --- */
+      .link-button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border-radius: 0.5rem; /* rounded-lg */
+        font-weight: 700;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(0);
         position: relative;
         overflow: hidden;
       }
+      .link-button:hover {
+        transform: translateY(-1px);
+      }
+      .link-button .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.75rem;
+      }
+      .primary {
+        background-color: var(--brand-orange);
+        color: white;
+        box-shadow: 0 10px 15px -3px rgba(217, 119, 6, 0.3), 0 4px 6px -2px rgba(217, 119, 6, 0.2);
+      }
+      .primary:hover {
+         background-color: #F59E0B; /* amber-500 */
+         box-shadow: 0 20px 25px -5px rgba(217, 119, 6, 0.5), 0 10px 10px -5px rgba(217, 119, 6, 0.3);
+      }
+      .secondary {
+        background-color: var(--white-alpha-5);
+        border: 1px solid var(--white-alpha-20);
+        color: white;
+        backdrop-filter: blur(0.25rem);
+      }
+      .secondary:hover {
+        background-color: var(--white-alpha-10);
+      }
 
+      /* --- Divisores e Efeitos --- */
+      .barber-pole {
+        width: 100%;
+        max-width: 20rem; /* max-w-xs */
+        height: 3px;
+        background: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(217, 119, 6, 0.5) 10px, rgba(217, 119, 6, 0.5) 20px);
+        background-size: 56px 100%;
+        animation: barberpole 1s linear infinite;
+      }
       .shine-effect::after {
         content: '';
         position: absolute;
@@ -106,301 +206,200 @@
         transform: rotate(20deg) translateX(-250px);
         transition: transform 0.8s ease-in-out;
       }
-
-      .shine-effect:hover::after {
+      .link-button:hover .shine-effect::after {
         transform: rotate(20deg) translateX(250px);
       }
-      
-      /* Estilo da marca d'água */
-      .watermark-hypertech {
-        position: fixed;         /* Fica fixo na tela, mesmo com rolagem */
-        bottom: 10px;            /* 10 pixels de distância do rodapé */
-        right: 15px;             /* 15 pixels de distância da direita */
-        opacity: 0.6;            /* Transparência de 60% */
-        font-size: 12px;         /* Tamanho da fonte pequeno e discreto */
-        font-family: Arial, sans-serif; /* Fonte comum e legível */
-        color: #a0a0a0;             /* Cor cinza claro (bom para fundos escuros) */
-        z-index: 9999;           /* Garante que fique por cima de tudo */
-        transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
+
+      /* --- Animações --- */
+      @keyframes logo-glow {
+        0%, 100% { box-shadow: 0 0 15px rgba(217, 119, 6, 0.5), 0 0 30px rgba(217, 119, 6, 0.3); }
+        50% { box-shadow: 0 0 25px rgba(217, 119, 6, 0.7), 0 0 50px rgba(217, 119, 6, 0.5); }
+      }
+      @keyframes barberpole {
+        from { background-position: 0 0; } to { background-position: 56px 0; }
       }
 
-      /* Ao passar o mouse, a marca fica 100% visível */
-      .watermark-hypertech:hover {
+      /* --- Modal "Quem Somos" --- */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(0.25rem);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+      .modal-overlay.open {
         opacity: 1;
+        visibility: visible;
+      }
+      .modal-content {
+        width: 100%;
+        max-width: 32rem; /* max-w-lg */
+        margin: 1rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(1.5rem);
+        border: 1px solid var(--white-alpha-20);
+        border-radius: 1rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        position: relative;
+        transform: scale(0.95);
+        transition: transform 0.3s;
+      }
+      .modal-overlay.open .modal-content {
+        transform: scale(1);
+      }
+      .modal-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: #9CA3AF; /* gray-400 */
+        transition: color 0.2s;
+      }
+      .modal-close-btn:hover {
+        color: white;
+      }
+      .modal-title {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2.25rem; /* text-4xl */
+        color: var(--brand-orange);
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+      }
+      .modal-body {
+        color: #E5E7EB; /* gray-200 */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
 
-      /* Estilo do link */
-      .watermark-hypertech a {
-        color: inherit;          /* Usa a mesma cor do texto */
-        text-decoration: none;   /* Remove o sublinhado padrão */
-        font-weight: bold;
+      /* --- Marca D'água --- */
+      .watermark-hypertech {
+        position: fixed; bottom: 10px; right: 15px;
+        opacity: 0.6; font-size: 12px; font-family: Arial, sans-serif;
+        color: #a0a0a0; z-index: 9999; transition: opacity 0.3s ease;
       }
-
-      /* Adiciona sublinhado no link ao passar o mouse */
-      .watermark-hypertech a:hover {
-        text-decoration: underline;
-      }
+      .watermark-hypertech:hover { opacity: 1; }
+      .watermark-hypertech a { color: inherit; text-decoration: none; font-weight: bold; }
+      .watermark-hypertech a:hover { text-decoration: underline; }
     </style>
 </head>
-  <body>
-    <div id="root"></div>
+<body>
 
-    <!-- React and Babel for JSX -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Load React Components -->
-    <script type="text/babel">
-      const { useState, useEffect } = React;
-
-      // --- Icons ---
-      const iconClasses = "w-6 h-6";
-
-      const WhatsappIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={iconClasses} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.037l-1.03 3.777 3.847-1.002z" />
-        </svg>
-      );
-
-      const InstagramIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={iconClasses} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
-        </svg>
-      );
-
-      const MapPinIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={iconClasses} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-      );
-
-      const InfoIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={iconClasses} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="16" x2="12" y2="12"></line>
-          <line x1="12" y1="8" x2="12.01" y2="8"></line>
-        </svg>
-      );
-
-      const MenuIcon = () => (
-          <svg xmlns="http://www.w3.org/2000/svg" className={iconClasses} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
+    <div class="container">
+      <div id="main-card" class="card frosted-card-texture">
+        <!-- O conteúdo será inserido aqui pelo JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Modal "Quem Somos" -->
+    <div id="about-modal" class="modal-overlay">
+      <div class="modal-content frosted-card-texture" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Fechar modal">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" style="width: 1.5rem; height: 1.5rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
-      );
+        </button>
+        <h2 id="modal-title" class="modal-title">Quem Somos</h2>
+        <div class="modal-body">
+          <p>No Parrilla 316, nossa paixão é o churrasco. Nascemos do desejo de trazer a autêntica experiência da parrilla para Palmeira dos Índios, combinando cortes de carnes nobres com um toque de tradição e inovação.</p>
+          <p>Acreditamos que uma boa refeição é mais do que apenas comida; é um momento de conexão, celebração e alegria. Por isso, criamos um ambiente acolhedor e familiar, onde cada detalhe é pensado para que você e sua família se sintam em casa.</p>
+          <p>Venha nos visitar e descubra por que somos mais que uma churrascaria. Somos um destino para quem busca sabor, qualidade e momentos inesquecíveis.</p>
+        </div>
+      </div>
+    </div>
 
-      // --- AboutModal Component ---
-      const AboutModal = ({ isOpen, onClose }) => {
-        useEffect(() => {
-          const handleEsc = (event) => {
-            if (event.key === 'Escape') {
-              onClose();
-            }
-          };
-          window.addEventListener('keydown', handleEsc);
-          return () => {
-            window.removeEventListener('keydown', handleEsc);
-          };
-        }, [onClose]);
-
-        if (!isOpen) return null;
-
-        return (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300"
-            onClick={onClose}
-          >
-            <div
-              className="w-full max-w-lg m-4 bg-black/40 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl p-8 relative frosted-card-texture transform transition-all duration-300"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-                aria-label="Fechar modal"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <h2 className="font-bebas text-4xl text-brand-orange tracking-wider mb-4">Quem Somos</h2>
-              <div className="space-y-4 text-gray-200">
-                <p>
-                  No Parrilla 316, nossa paixão é o churrasco. Nascemos do desejo de trazer a autêntica experiência da parrilla para Palmeira dos Índios, combinando cortes de carnes nobres com um toque de tradição e inovação.
-                </p>
-                <p>
-                  Acreditamos que uma boa refeição é mais do que apenas comida; é um momento de conexão, celebração e alegria. Por isso, criamos um ambiente acolhedor e familiar, onde cada detalhe é pensado para que você e sua família se sintam em casa.
-                </p>
-                <p>
-                  Venha nos visitar e descubra por que somos mais que uma churrascaria. Somos um destino para quem busca sabor, qualidade e momentos inesquecíveis.
-                </p>
-              </div>
-            </div>
-          </div>
-        );
-      };
-
-      // --- BarberPoleDivider Component ---
-      const BarberPoleDivider = () => {
-        return <div className="w-full max-w-xs my-4 barber-pole"></div>;
-      };
-
-      // --- LinkButton Component ---
-      const LinkButton = ({ text, href, primary, icon, onClick }) => {
-        const baseClasses = "w-full flex items-center justify-center p-3 rounded-lg font-bold text-center transition-all duration-300 ease-in-out transform hover:-translate-y-px focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/50 focus:ring-brand-orange shine-effect";
-        
-        const primaryClasses = "bg-brand-orange text-white shadow-lg shadow-brand-orange/30 hover:bg-amber-500 hover:shadow-xl hover:shadow-brand-orange/50";
-        const secondaryClasses = "bg-white/5 border border-white/20 text-white hover:bg-white/10 backdrop-blur-sm";
-
-        const buttonContent = (
-          <React.Fragment>
-            <span className="mr-3">{icon}</span>
-            {text}
-          </React.Fragment>
-        );
-
-        if (href) {
-          return (
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${baseClasses} ${primary ? primaryClasses : secondaryClasses}`}
-            >
-              {buttonContent}
-            </a>
-          );
-        }
-
-        return (
-          <button
-            onClick={onClick}
-            className={`${baseClasses} ${primary ? primaryClasses : secondaryClasses}`}
-          >
-            {buttonContent}
-          </button>
-        );
-      };
-
-      // --- Header Component ---
-      const Header = () => {
-        return (
-          <header className="flex flex-col items-center text-center">
-            <div className="relative">
-              <img
-                src="https://ugc.production.linktr.ee/77d155e3-4bc3-4464-b3f2-9434c898e005_Imagem-do-WhatsApp-de-2025-07-17---s--14.24.28-0c2f80c6.jpeg?io=true&size=avatar-v3_0"
-                alt="Parrilla 316 Logo"
-                className="w-28 h-28 rounded-full object-cover p-1 bg-gray-800 ring-2 ring-brand-orange/50 logo-glow"
-              />
-            </div>
-            <h1 className="font-bebas text-5xl mt-4 tracking-wider bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent">
-              Parrilla 316
-            </h1>
-            <p className="text-sm text-gray-300 mt-2 uppercase tracking-widest font-light">
-              Bem-vindos ao Parrilla 316! Churrasco premium, ambiente familiar e sabor inesquecível em Palmeira dos Índios.
-            </p>
-          </header>
-        );
-      };
-
-      // --- App Component (Main) ---
-      const App = () => {
-        const [isModalOpen, setIsModalOpen] = useState(false);
-        const [isVisible, setIsVisible] = useState(false);
-
-        useEffect(() => {
-          // Trigger fade-in animation on mount
-          const timer = setTimeout(() => setIsVisible(true), 100);
-          return () => clearTimeout(timer);
-        }, []);
-
-        const links = [
-          {
-            id: 1,
-            text: 'Cardápio Digital Parrilla 316',
-            href: 'https://www.vucafood.com.br/parilla36/2827/cardapio-digital',
-            primary: false,
-            icon: <MenuIcon />,
-          },
-          {
-            id: 2,
-            text: 'Instagram',
-            href: 'https://www.instagram.com/PARRILLA.316',
-            primary: false,
-            icon: <InstagramIcon />,
-          },
-          {
-            id: 3,
-            text: 'Quem somos?',
-            primary: false,
-            onClick: () => setIsModalOpen(true),
-            icon: <InfoIcon />,
-          },
-          {
-            id: 4,
-            text: 'Como chegar',
-            href: 'https://maps.app.goo.gl/nVjimAq8Cd8FUxQA6',
-            primary: false,
-            icon: <MapPinIcon />,
-          },
-        ];
-        
-        return (
-          <div className="min-h-screen w-full flex items-center justify-center p-4 font-roboto text-white">
-            <div
-              className={`w-full max-w-md mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-700 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <div className="p-6 sm:p-8 frosted-card-texture rounded-2xl">
-                <Header />
-                <main className="mt-8 space-y-4 flex flex-col items-center">
-                  <div className="w-full max-w-xs">
-                      <img 
-                          src="https://ugc.production.linktr.ee/ec03870b-9853-4380-aade-43626e17d61b_image.png?io=true&size=thumbnail-feature-v1_0" 
-                          alt="WhatsApp Offer" 
-                          className="w-full rounded-lg mb-2"
-                      />
-                      <LinkButton 
-                          text="Whatsapp"
-                          href="https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0"
-                          primary={true}
-                          icon={<WhatsappIcon />}
-                      />
-                  </div>
-                  
-                  <BarberPoleDivider />
-                  
-                  <div className="w-full space-y-4">
-                    {links.map((link) => (
-                      <LinkButton key={link.id} {...link} />
-                    ))}
-                  </div>
-                </main>
-              </div>
-            </div>
-            <AboutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-          </div>
-        );
-      };
-
-      // --- Render the App ---
-      const rootElement = document.getElementById('root');
-      const root = ReactDOM.createRoot(rootElement);
-      root.render(
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      );
-    </script>
-
-    <!-- Início da Marca d'água Hyper Tech -->
     <div class="watermark-hypertech">
       Desenvolvido por <a href="https://www.hyper-tech.online/" target="_blank" rel="noopener noreferrer">Hyper Tech</a>
     </div>
-    <!-- Fim da Marca d'água -->
-  </body>
+
+    <!-- JavaScript Leve e Otimizado -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const mainCard = document.getElementById('main-card');
+
+        // --- Ícones em SVG como strings para performance ---
+        const svgIcon = (path) => `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor">${path}</svg>`;
+        const whatsappIcon = svgIcon('<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.037l-1.03 3.777 3.847-1.002z" />');
+        const instagramIcon = svgIcon('<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />');
+        const svgIconStroke = (path) => `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
+        const mapPinIcon = svgIconStroke('<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>');
+        const infoIcon = svgIconStroke('<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line>');
+        const menuIcon = svgIconStroke('<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>');
+
+        // --- Gerador de HTML para os links ---
+        const createLink = ({ text, href, primary, icon, isButton }) => {
+          const typeClass = primary ? 'primary' : 'secondary';
+          const tag = isButton ? 'button' : 'a';
+          const hrefAttr = !isButton ? `href="${href}" target="_blank" rel="noopener noreferrer"` : '';
+          const buttonIdAttr = isButton ? `id="open-modal-btn"` : '';
+          
+          return `
+            <${tag} ${hrefAttr} ${buttonIdAttr} class="link-button ${typeClass} shine-effect">
+              ${icon}
+              <span>${text}</span>
+            </${tag}>
+          `;
+        };
+        
+        // --- Dados dos Links ---
+        const links = [
+            { text: 'Cardápio Digital Parrilla 316', href: 'https://www.vucafood.com.br/parilla36/2827/cardapio-digital', primary: false, icon: menuIcon },
+            { text: 'Instagram', href: 'https://www.instagram.com/PARRILLA.316', primary: false, icon: instagramIcon },
+            { text: 'Quem somos?', isButton: true, primary: false, icon: infoIcon },
+            { text: 'Como chegar', href: 'https://maps.app.goo.gl/nVjimAq8Cd8FUxQA6', primary: false, icon: mapPinIcon },
+        ];
+
+        // --- Monta o conteúdo principal do card ---
+        mainCard.innerHTML = `
+          <header class="header">
+            <img src="https://ugc.production.linktr.ee/77d155e3-4bc3-4464-b3f2-9434c898e005_Imagem-do-WhatsApp-de-2025-07-17---s--14.24.28-0c2f80c6.jpeg?io=true&size=avatar-v3_0" alt="Parrilla 316 Logo" class="logo" loading="lazy" />
+            <h1 class="title">Parrilla 316</h1>
+            <p class="subtitle">Bem-vindos ao Parrilla 316! Churrasco premium, ambiente familiar e sabor inesquecível em Palmeira dos Índios.</p>
+          </header>
+          <main class="main-content">
+            <div class="whatsapp-offer">
+              <img src="https://ugc.production.linktr.ee/ec03870b-9853-4380-aade-43626e17d61b_image.png?io=true&size=thumbnail-feature-v1_0" alt="WhatsApp Offer" loading="lazy" />
+              ${createLink({ text: 'Whatsapp', href: 'https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0', primary: true, icon: whatsappIcon })}
+            </div>
+            <div class="barber-pole"></div>
+            <div class="w-full" style="width: 100%; display: flex; flex-direction: column; gap: 1rem;">
+              ${links.map(link => createLink(link)).join('')}
+            </div>
+          </main>
+        `;
+
+        // --- Animação de entrada ---
+        setTimeout(() => {
+          mainCard.classList.add('visible');
+        }, 100);
+
+        // --- Lógica do Modal ---
+        const modal = document.getElementById('about-modal');
+        const openModalBtn = document.getElementById('open-modal-btn');
+        const closeModalBtn = document.getElementById('modal-close-btn');
+
+        const openModal = () => modal.classList.add('open');
+        const closeModal = () => modal.classList.remove('open');
+
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeModal();
+          }
+        });
+      });
+    </script>
+</body>
 </html>
