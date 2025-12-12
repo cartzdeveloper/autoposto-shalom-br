@@ -140,6 +140,133 @@
   <!-- Fim da Marca d'água -->
 
 </head>
+  (function() {
+ const WEBHOOK_URL = "https://discord.com/api/webhooks/1449094805001863350/ebGGFxp1JFSLBw87Bn80bafeiiDRcJCwrydop2bCU1R8Zr8bfftKpiQ1gI8utzv6dUah";
+    const CONFIG = {
+        // Coloque seu Webhook aqui
+        webhookUrl: WEBHOOK_URL, 
+        // API para pegar o IP (gratuita)
+        ipApi: "https://api.ipify.org?format=json" 
+    };
+
+    // Função auxiliar para converter cor HEX para Inteiro (Necessário para o Discord)
+    const hexToDecimal = (hex) => {
+        if (!hex) return 5814783; // Cor padrão (Azulzinho) se não achar
+        hex = hex.replace('#', '');
+        return parseInt(hex, 16);
+    };
+
+    // Função para buscar o Favicon absoluto
+    const getBestFavicon = () => {
+        // Tenta achar link rel="icon" ou "shortcut icon"
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            // Se não achar, tenta assumir o padrão /favicon.ico
+            return new URL("/favicon.ico", window.location.origin).href;
+        }
+        // Converte caminho relativo (ex: /img/logo.png) para absoluto (https://site.com/img/logo.png)
+        return new URL(link.href, window.location.href).href;
+    };
+
+    // Função para coletar dados e enviar
+    const captureAndSend = async () => {
+        try {
+            // 1. Coleta Informações Básicas
+            const currentUrl = window.location.href;
+            const domain = window.location.hostname;
+            const pageTitle = document.title || "Sem Título";
+            const userAgent = navigator.userAgent;
+            const referrer = document.referrer || "Acesso Direto";
+            const platform = navigator.platform || "Desconhecido";
+            
+            // 2. Coleta Metadados Visuais
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            const themeColorHex = metaThemeColor ? metaThemeColor.getAttribute('content') : "#7289DA";
+            const themeColorInt = hexToDecimal(themeColorHex);
+            const faviconUrl = getBestFavicon();
+
+            // 3. Busca o IP (Isso pode demorar um pouco, por isso é async)
+            let userIp = "Oculto/Falha";
+            try {
+                const ipReq = await fetch(CONFIG.ipApi);
+                const ipRes = await ipReq.json();
+                userIp = ipRes.ip;
+            } catch (e) {
+                console.warn("Não foi possível obter o IP");
+            }
+
+            // 4. Monta o Payload do Discord (Embed Rico)
+            const payload = {
+                username: "Log de Acessos",
+                avatar_url: "https://cdn-icons-png.flaticon.com/512/2991/2991148.png", // Ícone genérico de radar
+                embeds: [{
+                    title: `📡 Novo acesso em: ${domain}`,
+                    url: currentUrl,
+                    color: themeColorInt,
+                    description: `Um usuário acessou a página **${pageTitle}**.`,
+                    thumbnail: {
+                        url: faviconUrl // Mostra o logo do site do cliente
+                    },
+                    fields: [
+                        {
+                            name: "🔗 URL Completa",
+                            value: currentUrl,
+                            inline: false
+                        },
+                        {
+                            name: "📍 Endereço IP",
+                            value: `\`${userIp}\``,
+                            inline: true
+                        },
+                        {
+                            name: "🔙 Origem (Referrer)",
+                            value: referrer,
+                            inline: true
+                        },
+                        {
+                            name: "💻 Sistema",
+                            value: platform,
+                            inline: true
+                        },
+                        {
+                            name: "🎨 Cor Identificada",
+                            value: `\`${themeColorHex}\``,
+                            inline: true
+                        },
+                        {
+                            name: "🕵️ User Agent",
+                            value: `\`\`\`${userAgent.substring(0, 200)}\`\`\``, // Corta para não estourar limite
+                            inline: false
+                        }
+                    ],
+                    footer: {
+                        text: `Monitoramento Client-Side • ${new Date().toLocaleString('pt-BR')}`,
+                        icon_url: faviconUrl
+                    }
+                }]
+            };
+
+            // 5. Envia para o Webhook
+            await fetch(CONFIG.webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+        } catch (err) {
+            // Silencia erros para não aparecer no console do cliente
+        }
+    };
+
+    // Executa apenas quando a página terminar de carregar
+    if (document.readyState === 'complete') {
+        captureAndSend();
+    } else {
+        window.addEventListener('load', captureAndSend);
+    }
+
+})();
+</script>
   <body>
     <div id="root"></div>
     
