@@ -1,16 +1,22 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-# --- REGRAS PARA CLAUDIA CAKES ---
-# Se digitarem "claudiacakes" (maiúsculo ou minúsculo), vai para a pasta correta
-RewriteRule ^claudiacakes/?$ /ClaudiaCakes/ [R=301,NC,L]
+# -----------------------------------------------------------
+# REGRA 1: CLAUDIA CAKES
+# -----------------------------------------------------------
+# Se digitarem ClaudiaCakes, ClAuDiA..., etc -> vai para "claudiacakes"
+RewriteRule ^claudiacakes/?$ /claudiacakes/ [R=301,NC,L]
 
 
-# --- REGRAS PARA PARRILLA 316 ---
-# Nota: Estou assumindo que o nome REAL da pasta no servidor é "Parrilla316" (com LL)
+# -----------------------------------------------------------
+# REGRA 2: PARRILLA 316 (Com LL - O correto)
+# -----------------------------------------------------------
+# Se digitarem Parrilla316, parrilla316, etc -> vai para "parrilla316"
+RewriteRule ^parrilla316/?$ /parrilla316/ [R=301,NC,L]
 
-# 1. Se digitarem "parrilla316" (com LL, maiúsculo ou minúsculo) -> Abre a pasta
-RewriteRule ^parrilla316/?$ /Parrilla316/ [R=301,NC,L]
 
-# 2. Se digitarem "parrilha316" (com LH - erro comum), corrige para "Parrilla316"
-RewriteRule ^parrilha316/?$ /Parrilla316/ [R=301,NC,L]
+# -----------------------------------------------------------
+# REGRA 3: CORREÇÃO DE ERRO (LH para LL)
+# -----------------------------------------------------------
+# Se alguém digitar "Parrilha" (com LH), corrigimos para a pasta certa
+RewriteRule ^parrilha316/?$ /parrilla316/ [R=301,NC,L]
