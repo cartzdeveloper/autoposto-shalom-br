@@ -1,4 +1,16 @@
-<IfModule mod_speling.c>
-    CheckSpelling On
-    CheckCaseOnly Off
-</IfModule>
+Options +FollowSymLinks
+RewriteEngine On
+
+# --- REGRAS PARA CLAUDIA CAKES ---
+# Se digitarem "claudiacakes" (maiúsculo ou minúsculo), vai para a pasta correta
+RewriteRule ^claudiacakes/?$ /ClaudiaCakes/ [R=301,NC,L]
+
+
+# --- REGRAS PARA PARRILLA 316 ---
+# Nota: Estou assumindo que o nome REAL da pasta no servidor é "Parrilla316" (com LL)
+
+# 1. Se digitarem "parrilla316" (com LL, maiúsculo ou minúsculo) -> Abre a pasta
+RewriteRule ^parrilla316/?$ /Parrilla316/ [R=301,NC,L]
+
+# 2. Se digitarem "parrilha316" (com LH - erro comum), corrige para "Parrilla316"
+RewriteRule ^parrilha316/?$ /Parrilla316/ [R=301,NC,L]
