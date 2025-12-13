@@ -1,498 +1,618 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Claudia Cakes - Confeitaria Fina</title>
-
-    <!-- SEO & Social Media Meta Tags -->
+    
+    <!-- SEO & Link Preview Meta Tags -->
     <meta name="description" content="Claudia Cakes – Confeitaria Fina. Experiência em forma de doce. Encomendas personalizadas & pronta-entrega." />
-    <meta name="author" content="Claudia Cakes" />
-    <meta name="keywords" content="confeitaria, bolos, doces, claudia cakes, palmeira dos indios, estrela de alagoas" />
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Claudia Cakes - Confeitaria Fina" />
     <meta property="og:description" content="Experiência em forma de doce. 🎂 Sob medida para momentos inesquecíveis. 🌸 Encomendas personalizadas & pronta-entrega." />
     <meta property="og:image" content="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" />
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Claudia Cakes - Confeitaria Fina" />
-    <meta property="twitter:description" content="Experiência em forma de doce. 🎂 Sob medida para momentos inesquecíveis. 🌸 Encomendas personalizadas & pronta-entrega." />
-    <meta property="twitter:image" content="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" />
-
     <!-- Favicon -->
-    <link rel="icon" href="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" type="image/jpeg" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom Tailwind Config -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              'sans': ['Roboto', 'sans-serif'],
-              'display': ['Bebas Neue', 'cursive'],
+              'kanit': ['"Kanit"', 'sans-serif'],
+              'inter': ['"Inter"', 'sans-serif'],
+              'cinzel': ['"Cinzel"', 'serif'],
             },
             colors: {
-              'brand-pink': '#E53A89',
-              'brand-pink-dark': '#C02A6E',
-            },
-            keyframes: {
-              'logo-glow': {
-                '0%, 100%': { boxShadow: '0 0 15px 5px rgba(229, 58, 137, 0.4), 0 0 5px 1px rgba(229, 58, 137, 0.3)' },
-                '50%': { boxShadow: '0 0 25px 8px rgba(229, 58, 137, 0.6), 0 0 10px 2px rgba(229, 58, 137, 0.5)' },
-              },
-              'page-load-fade-in-up': {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              'modal-fade-in': {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              'modal-slide-in-up': {
-                '0%': { transform: 'translateY(30px) scale(0.98)', opacity: '0' },
-                '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
-              },
-              'shine': {
-                '0%': { transform: 'translateX(-100%) skewX(-20deg)' },
-                '100%': { transform: 'translateX(200%) skewX(-20deg)' },
-              },
-               'barber-pole': {
-                '0%': { backgroundPosition: '0 0' },
-                '100%': { backgroundPosition: '56px 0' },
-              }
+              'brand-black': '#050505',
+              'brand-gold': '#D4AF37', /* Classic Gold */
+              'brand-pink': '#E53A89', /* Claudia Cakes Pink */
+              'brand-rose': '#C02A6E',
+              'brand-dark': '#0f0f0f',
             },
             animation: {
-              'logo-glow': 'logo-glow 4s ease-in-out infinite',
-              'page-load': 'page-load-fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
-              'modal-fade-in': 'modal-fade-in 0.3s ease-out forwards',
-              'modal-slide-in-up': 'modal-slide-in-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
-              'shine': 'shine 1.5s infinite linear',
-              'barber-pole': 'barber-pole 1s linear infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 8s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+              'spin-slow': 'spin 12s linear infinite',
             },
-            backgroundImage: {
-              'grain-texture': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
             }
-          }
-        }
-      }
+          },
+        },
+      };
     </script>
 
-    <!-- React and Babel -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <!-- Google Fonts: Kanit, Inter & Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Custom Styles -->
     <style>
       body {
-        background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), url('https://img.freepik.com/fotos-gratis/close-up-cupcakes-bonitos_23-2147758340.jpg?semt=ais_hybrid&w=740&q=80');
+        background-color: #050505;
+        background-image: 
+          linear-gradient(to bottom, rgba(10, 5, 8, 0.85) 0%, rgba(10, 5, 8, 0.7) 50%, rgba(10, 5, 8, 0.95) 100%),
+          radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.95) 100%),
+          url('https://img.freepik.com/fotos-gratis/close-up-cupcakes-bonitos_23-2147758340.jpg?semt=ais_hybrid&w=740&q=80');
         background-size: cover;
-        background-attachment: fixed;
         background-position: center;
+        background-attachment: fixed;
+        font-family: 'Inter', sans-serif;
+        color: #e5e5e5;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Ultra Premium Glass Effect */
+      .glass-panel {
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      }
+      
+      .glass-button {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glass-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+        transition: 0.5s;
+      }
+
+      .glass-button:hover::before {
+        left: 100%;
+      }
+
+      .glass-button:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(229, 58, 137, 0.4); /* Pink border on hover */
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Text Glow */
+      .text-glow-gold {
+        text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+      }
+      .text-glow-pink {
+        text-shadow: 0 0 25px rgba(229, 58, 137, 0.4);
+      }
+
+      /* Preloader */
+      .preloader-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #050103; /* Very dark pink/black */
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 1.5s ease-in-out, visibility 1.5s;
+      }
+
+      .preloader-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      /* Smooth Scrollbar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.3); 
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #E53A89; 
+        border-radius: 4px;
+      }
+
+      /* Watermark fixed at bottom */
+      .watermark-container {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 50;
+        pointer-events: none;
+      }
+      .watermark-content {
+        pointer-events: auto;
+        font-size: 11px;
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.4);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+        transition: opacity 0.3s;
+      }
+      .watermark-content:hover {
+        opacity: 1;
+      }
+      .watermark-content a {
+        color: #E53A89;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .watermark-content a:hover {
+        color: #fff;
+        text-decoration: none;
       }
     </style>
-
-  <!-- Início da Marca d'água Hyper Tech -->
-  <style>
-    /* Estilo da marca d'água */
-    .watermark-hypertech {
-      position: fixed;         /* Fica fixo na tela, mesmo com rolagem */
-      bottom: 10px;            /* 10 pixels de distância do rodapé */
-      right: 15px;             /* 15 pixels de distância da direita */
-      opacity: 0.6;            /* Transparência de 60% */
-      font-size: 12px;         /* Tamanho da fonte pequeno e discreto */
-      font-family: Arial, sans-serif; /* Fonte comum e legível */
-      color: #FFF;             /* Cor branca para melhor contraste */
-      z-index: 9999;           /* Garante que fique por cima de tudo */
-      transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
-      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-      padding: 4px 8px; /* Espaçamento interno */
-      border-radius: 4px; /* Cantos arredondados */
-    }
-
-    /* Ao passar o mouse, a marca fica 100% visível */
-    .watermark-hypertech:hover {
-      opacity: 1;
-    }
-
-    /* Estilo do link */
-    .watermark-hypertech a {
-      color: inherit;          /* Usa a mesma cor do texto */
-      text-decoration: none;   /* Remove o sublinhado padrão */
-      font-weight: bold;
-    }
-
-    /* Adiciona sublinhado no link ao passar o mouse */
-    .watermark-hypertech a:hover {
-      text-decoration: underline;
-    }
-  </style>
-  <!-- Fim da Marca d'água -->
-
-</head>
-    <script>
-  (function() {
- const WEBHOOK_URL = "https://discord.com/api/webhooks/1449094805001863350/ebGGFxp1JFSLBw87Bn80bafeiiDRcJCwrydop2bCU1R8Zr8bfftKpiQ1gI8utzv6dUah";
-    const CONFIG = {
-        // Coloque seu Webhook aqui
-        webhookUrl: WEBHOOK_URL, 
-        // API para pegar o IP (gratuita)
-        ipApi: "https://api.ipify.org?format=json" 
-    };
-
-    // Função auxiliar para converter cor HEX para Inteiro (Necessário para o Discord)
-    const hexToDecimal = (hex) => {
-        if (!hex) return 5814783; // Cor padrão (Azulzinho) se não achar
-        hex = hex.replace('#', '');
-        return parseInt(hex, 16);
-    };
-
-    // Função para buscar o Favicon absoluto
-    const getBestFavicon = () => {
-        // Tenta achar link rel="icon" ou "shortcut icon"
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-            // Se não achar, tenta assumir o padrão /favicon.ico
-            return new URL("/favicon.ico", window.location.origin).href;
-        }
-        // Converte caminho relativo (ex: /img/logo.png) para absoluto (https://site.com/img/logo.png)
-        return new URL(link.href, window.location.href).href;
-    };
-
-    // Função para coletar dados e enviar
-    const captureAndSend = async () => {
-        try {
-            // 1. Coleta Informações Básicas
-            const currentUrl = window.location.href;
-            const domain = window.location.hostname;
-            const pageTitle = document.title || "Sem Título";
-            const userAgent = navigator.userAgent;
-            const referrer = document.referrer || "Acesso Direto";
-            const platform = navigator.platform || "Desconhecido";
-            
-            // 2. Coleta Metadados Visuais
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            const themeColorHex = metaThemeColor ? metaThemeColor.getAttribute('content') : "#7289DA";
-            const themeColorInt = hexToDecimal(themeColorHex);
-            const faviconUrl = getBestFavicon();
-
-            // 3. Busca o IP (Isso pode demorar um pouco, por isso é async)
-            let userIp = "Oculto/Falha";
-            try {
-                const ipReq = await fetch(CONFIG.ipApi);
-                const ipRes = await ipReq.json();
-                userIp = ipRes.ip;
-            } catch (e) {
-                console.warn("Não foi possível obter o IP");
-            }
-
-            // 4. Monta o Payload do Discord (Embed Rico)
-            const payload = {
-                username: "Log de Acessos",
-                avatar_url: "https://cdn-icons-png.flaticon.com/512/2991/2991148.png", // Ícone genérico de radar
-                embeds: [{
-                    title: `📡 Novo acesso em: ${domain}`,
-                    url: currentUrl,
-                    color: themeColorInt,
-                    description: `Um usuário acessou a página **${pageTitle}**.`,
-                    thumbnail: {
-                        url: faviconUrl // Mostra o logo do site do cliente
-                    },
-                    fields: [
-                        {
-                            name: "🔗 URL Completa",
-                            value: currentUrl,
-                            inline: false
-                        },
-                        {
-                            name: "📍 Endereço IP",
-                            value: `\`${userIp}\``,
-                            inline: true
-                        },
-                        {
-                            name: "🔙 Origem (Referrer)",
-                            value: referrer,
-                            inline: true
-                        },
-                        {
-                            name: "💻 Sistema",
-                            value: platform,
-                            inline: true
-                        },
-                        {
-                            name: "🎨 Cor Identificada",
-                            value: `\`${themeColorHex}\``,
-                            inline: true
-                        },
-                        {
-                            name: "🕵️ User Agent",
-                            value: `\`\`\`${userAgent.substring(0, 200)}\`\`\``, // Corta para não estourar limite
-                            inline: false
-                        }
-                    ],
-                    footer: {
-                        text: `Monitoramento Client-Side • ${new Date().toLocaleString('pt-BR')}`,
-                        icon_url: faviconUrl
-                    }
-                }]
-            };
-
-            // 5. Envia para o Webhook
-            await fetch(CONFIG.webhookUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            });
-
-        } catch (err) {
-            // Silencia erros para não aparecer no console do cliente
-        }
-    };
-
-    // Executa apenas quando a página terminar de carregar
-    if (document.readyState === 'complete') {
-        captureAndSend();
-    } else {
-        window.addEventListener('load', captureAndSend);
-    }
-
-})();
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
 </script>
-  <body>
+</head>
+<body>
     <div id="root"></div>
     
-    <script type="text/babel">
-      // All React code is now in this script block
+    <!-- Watermark fixed outside React root for persistence -->
+    <div class="watermark-container">
+      <div class="watermark-content">
+        Desenvolvido por <a href="https://www.hypertechal.com.br" target="_blank" rel="noopener noreferrer">Hyper Tech</a>
+      </div>
+    </div>
+    
+    <!-- React Libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX Transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-      // From components/Icons.tsx
-      const WhatsappIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle-more">
-          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-          <path d="M8 12h.01" />
-          <path d="M12 12h.01" />
-          <path d="M16 12h.01" />
+    <!-- Main Application Script -->
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      // --- Constants ---
+      const companyConfig = {
+        name: "CLAUDIA CAKES",
+        logoUrl: "https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0",
+        tagline: "Confeitaria Fina",
+        description: "Experiência em forma de doce. Sob medida para momentos inesquecíveis.",
+        whatsappLinkMain: "https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0",
+        offerImageUrl: "https://ugc.production.linktr.ee/4c029ae5-b4ed-4bed-a3ee-29c3372ccc9f_image.png?io=true&size=thumbnail-feature-v1_0",
+        
+        about: {
+          title: "Quem Somos",
+          paragraphs: [
+            "Na Claudia Cakes, cada doce é uma obra de arte, criada com paixão e os ingredientes mais finos. Somos uma confeitaria dedicada a transformar seus momentos especiais em memórias inesquecíveis, com bolos e doces personalizados que encantam os olhos e o paladar.",
+            "Nossa missão é levar a felicidade em forma de doce, oferecendo uma experiência única desde a encomenda até a última mordida. Seja para um casamento, aniversário ou um simples café da tarde, estamos aqui para adoçar sua vida."
+          ]
+        }
+      };
+
+      const mainLinks = [
+        {
+          id: 1,
+          text: "Whatsapp - Estrela de Alagoas",
+          href: "https://api.whatsapp.com/message/GB7I5WIV3E4DH1?autoload=1&app_absent=0",
+          iconName: "whatsapp",
+          subtitle: "Atendimento regional",
+          primary: false
+        },
+        {
+          id: 2,
+          text: "Cardápio Claudia Cakes",
+          href: "https://www.canva.com/design/DAGtoSkJMG4/BmEpZXibMzbntJG0J1Tb_g/view",
+          iconName: "menu",
+          subtitle: "Conheça nossas delícias",
+          primary: false
+        },
+        {
+          id: 3,
+          text: "Siga-nos no Instagram",
+          href: "https://www.instagram.com/claudia_cakes1/",
+          iconName: "instagram",
+          subtitle: "@claudia_cakes1",
+          primary: false
+        },
+        {
+          id: 4,
+          text: "Quem Somos?",
+          action: "open_modal",
+          iconName: "user",
+          subtitle: "Nossa história e amor",
+          primary: false
+        }
+      ];
+
+      // --- Icons ---
+      const WhatsappIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.037l-1.03 3.777 3.847-1.002z" />
         </svg>
       );
 
-      const UserIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user-round">
+      const InstagramIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
+        </svg>
+      );
+
+      const UserIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="8" r="4" />
           <path d="M20 21a8 8 0 0 0-16 0" />
         </svg>
       );
 
-      const MenuIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-book-open-text">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-          <path d="M6 8h2" />
-          <path d="M6 12h2" />
-          <path d="M16 8h2" />
-          <path d="M16 12h2" />
+      const MenuIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       );
 
-      const InstagramIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      );
+      const IconByName = ({ name, className }) => {
+        switch (name) {
+          case 'whatsapp': return <WhatsappIcon className={className} />;
+          case 'instagram': return <InstagramIcon className={className} />;
+          case 'user': return <UserIcon className={className} />;
+          case 'menu': return <MenuIcon className={className} />;
+          default: return null;
+        }
+      };
 
-      const CloseIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </svg>
-      );
-
-      // From components/LinkButton.tsx
-      const LinkButton = ({ href, onClick, text, icon, variant, isExternal = false }) => {
-        const baseClasses = "group relative w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg font-bold text-center transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/30 overflow-hidden";
+      // --- LinkButton Component ---
+      const LinkButton = ({ text, subtitle, href, primary, onClick, icon, iconName }) => {
+        // Base Premium Styles
+        const baseClasses = "group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none";
         
-        const variantClasses = {
-          primary: "bg-brand-pink text-white hover:bg-brand-pink-dark shadow-lg shadow-brand-pink/30 hover:shadow-xl hover:shadow-brand-pink/40 focus:ring-brand-pink",
-          secondary: "bg-white/5 border border-white/10 text-white hover:bg-white/10 backdrop-blur-sm focus:ring-white/50"
+        // Primary (WhatsApp/Featured) - Pink Gradient
+        const primaryClasses = "bg-gradient-to-r from-brand-pink via-brand-rose to-purple-900 text-white shadow-lg shadow-brand-pink/40 hover:shadow-brand-pink/50 border border-brand-pink/30";
+        
+        // Secondary (Standard Links) - Glassmorphism
+        const secondaryClasses = "glass-button text-gray-100";
+
+        const renderIcon = () => {
+          // Wrapper for icon to ensure alignment
+          const wrapperClass = `mr-4 p-2 rounded-lg transition-all duration-500 ${primary ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-300 group-hover:bg-brand-pink/20 group-hover:text-brand-pink'}`;
+          
+          if (icon) return <div className={wrapperClass}><span className="w-5 h-5 block">{icon}</span></div>;
+          if (iconName) return <div className={wrapperClass}><IconByName name={iconName} className="w-5 h-5" /></div>;
+          return null;
         };
 
-        const commonProps = {
-          className: `${baseClasses} ${variantClasses[variant]}`,
-          target: isExternal ? "_blank" : undefined,
-          rel: isExternal ? "noopener noreferrer" : undefined,
-        };
+        const ArrowIcon = () => (
+          <svg className={`w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 ${primary ? 'text-white' : 'text-gray-400 group-hover:text-brand-pink'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+          </svg>
+        );
 
         const content = (
           <React.Fragment>
-            <span className="z-10">{icon}</span>
-            <span className="z-10">{text}</span>
-            <span className="absolute top-0 left-0 h-full w-20 bg-white/30 transform -skew-x-12 -translate-x-full group-hover:translate-x-[30rem] transition-transform duration-700 ease-in-out z-10"></span>
+            {renderIcon()}
+            <div className="flex flex-col text-left">
+              <span className={`font-kanit tracking-wide text-base ${primary ? 'font-bold' : 'font-medium group-hover:text-brand-pink transition-colors'}`}>{text}</span>
+              {subtitle && <span className="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">{subtitle}</span>}
+            </div>
+            <ArrowIcon />
           </React.Fragment>
         );
 
         if (href) {
           return (
-            <a href={href} {...commonProps}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${baseClasses} ${primary ? primaryClasses : secondaryClasses}`}
+            >
               {content}
             </a>
           );
         }
 
         return (
-          <button onClick={onClick} {...commonProps}>
+          <button
+            onClick={onClick}
+            className={`${baseClasses} ${primary ? primaryClasses : secondaryClasses}`}
+          >
             {content}
           </button>
         );
       };
 
-      // From components/Modal.tsx
-      const Modal = ({ isOpen, onClose, children }) => {
-        if (!isOpen) {
-          return null;
-        }
+      // --- AboutModal Component ---
+      const AboutModal = ({ isOpen, onClose }) => {
+        useEffect(() => {
+          const handleEsc = (event) => {
+            if (event.key === 'Escape') {
+              onClose();
+            }
+          };
+          window.addEventListener('keydown', handleEsc);
+          return () => {
+            window.removeEventListener('keydown', handleEsc);
+          };
+        }, [onClose]);
+
+        if (!isOpen) return null;
 
         return (
-          <div 
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-modal-fade-in"
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg transition-all duration-500"
             onClick={onClose}
           >
             <div
-              className="relative w-full max-w-lg bg-black/50 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-2xl animate-modal-slide-in-up"
+              className="w-full max-w-lg m-4 bg-[#0a0a0a] border border-white/10 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.8)] p-8 relative animate-fade-in max-h-[90vh] overflow-y-auto custom-scrollbar"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-soft-light"></div>
-              <button 
-                onClick={onClose} 
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2 focus:ring-offset-black/50 rounded-full p-1"
+              {/* Decorative elements */}
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-pink/50 to-transparent"></div>
+              <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-pink/20 to-transparent"></div>
+
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 p-2 text-gray-500 hover:text-white hover:bg-white/10 rounded-full transition-all"
                 aria-label="Fechar modal"
               >
-                <CloseIcon />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
-              {children}
+              
+              <div className="mb-8 text-center">
+                  <span className="text-brand-pink uppercase tracking-[0.2em] text-xs font-bold mb-2 block">Claudia Cakes</span>
+                  <h2 className="font-cinzel text-3xl text-white tracking-wide mb-3">
+                  {companyConfig.about.title}
+                  </h2>
+                  <div className="w-16 h-0.5 bg-brand-pink/60 mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="space-y-6 text-gray-300 font-inter font-light leading-relaxed text-sm sm:text-base text-justify">
+                {companyConfig.about.paragraphs.map((paragraph, index) => (
+                  <p key={index} className="first-letter:text-2xl first-letter:text-brand-pink first-letter:font-cinzel first-letter:mr-1">{paragraph}</p>
+                ))}
+              </div>
+              
+              <div className="mt-10 pt-6 border-t border-white/5 text-center flex flex-col items-center">
+                  <img src={companyConfig.logoUrl} alt="Logo Small" className="w-10 h-10 rounded-full opacity-50 grayscale hover:grayscale-0 transition-all mb-3" />
+                  <p className="text-[10px] text-gray-600 font-inter tracking-widest uppercase">
+                      Feito com amor
+                  </p>
+              </div>
             </div>
           </div>
         );
       };
 
-      // From App.tsx
+      // --- Preloader Component (NEW & IMPROVED) ---
+      const Preloader = ({ loading }) => {
+        return (
+            <div className={`preloader-bg ${!loading ? 'preloader-hidden' : ''}`}>
+              <div className="flex flex-col items-center justify-center relative">
+                
+                {/* SVG Circle Animation */}
+                <div className="relative w-40 h-40 flex items-center justify-center">
+                    {/* Rotating outer ring */}
+                    <div className="absolute inset-0 rounded-full border-[1px] border-white/5"></div>
+                    
+                    {/* Pink/Gold Progress Ring */}
+                    <svg className="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(229, 58, 137, 0.2)" strokeWidth="1" />
+                      <circle cx="50" cy="50" r="48" fill="none" stroke="#E53A89" strokeWidth="1" strokeDasharray="60 240" strokeLinecap="round" />
+                    </svg>
+
+                    {/* Inner Glowing Pulse */}
+                    <div className="absolute inset-0 bg-brand-pink/10 rounded-full blur-2xl animate-pulse-slow"></div>
+
+                    {/* Logo */}
+                    <div className="relative w-28 h-28 rounded-full overflow-hidden border border-white/10 shadow-2xl z-10">
+                        <img
+                            src={companyConfig.logoUrl}
+                            alt="Loading..."
+                            className="w-full h-full object-cover opacity-90 brightness-110"
+                        />
+                    </div>
+                </div>
+
+                {/* Text Animation */}
+                <div className="mt-8 text-center space-y-2">
+                    <h2 className="font-cinzel text-2xl tracking-[0.4em] text-white/90 text-glow-pink">CLAUDIA CAKES</h2>
+                    <div className="flex items-center justify-center gap-2">
+                        <div className="w-1 h-1 rounded-full bg-brand-pink animate-bounce" style={{animationDelay: '0s'}}></div>
+                        <div className="w-1 h-1 rounded-full bg-brand-pink animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                        <div className="w-1 h-1 rounded-full bg-brand-pink animate-bounce" style={{animationDelay: '0.4s'}}></div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+        );
+      };
+
+      // --- Header Component ---
+      const Header = () => {
+        return (
+          <header className="flex flex-col items-center text-center mb-10 relative z-10 animate-fade-in">
+            <div className="relative mb-6 group cursor-default">
+              {/* Ambient Glow behind logo - Pink */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-brand-pink/20 blur-[50px] rounded-full pointer-events-none"></div>
+              
+              <img
+                src={companyConfig.logoUrl}
+                alt={`${companyConfig.name} Logo`}
+                className="relative w-32 h-32 rounded-full object-cover p-1 bg-[#0a0a0a] ring-1 ring-white/10 shadow-2xl animate-float brightness-105 contrast-110"
+              />
+            </div>
+            
+            <div className="space-y-3">
+              <h1 className="font-cinzel font-bold text-4xl sm:text-5xl tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-brand-pink via-white to-gray-400 drop-shadow-sm">
+                {companyConfig.name}
+              </h1>
+              <div className="flex items-center justify-center gap-3 opacity-60">
+                <div className="h-px w-8 bg-gradient-to-r from-transparent to-brand-gold"></div>
+                <div className="w-1.5 h-1.5 rotate-45 bg-brand-gold"></div>
+                <div className="h-px w-8 bg-gradient-to-l from-transparent to-brand-gold"></div>
+              </div>
+              <p className="font-inter text-xs text-gray-400 uppercase tracking-[0.2em] font-light max-w-sm mx-auto leading-relaxed">
+                {companyConfig.tagline}
+              </p>
+            </div>
+          </header>
+        );
+      };
+
+      // --- Main App Component ---
       const App = () => {
-        const [isModalOpen, setIsModalOpen] = React.useState(false);
+        const [loading, setLoading] = useState(true);
+        const [isModalOpen, setIsModalOpen] = useState(false);
+
+        useEffect(() => {
+          // Increase loading time slightly to show off animation
+          const timer = setTimeout(() => setLoading(false), 3000);
+          return () => clearTimeout(timer);
+        }, []);
+
+        const handleLinkClick = (action) => {
+          if (action === 'open_modal') {
+            setIsModalOpen(true);
+          }
+        };
 
         return (
-          <div className="min-h-screen w-full flex items-center justify-center p-4 font-sans text-white">
-            <div 
-              className="w-full max-w-md mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden animate-page-load"
-            >
-              <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-soft-light"></div>
-              
-              <header className="flex flex-col items-center text-center">
-                <div className="relative mb-4">
-                  <div className="absolute -inset-1.5 bg-gradient-to-br from-brand-pink to-purple-600 rounded-full animate-logo-glow"></div>
-                  <img 
-                    src="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" 
-                    alt="Claudia Cakes Logo" 
-                    className="relative w-28 h-28 rounded-full border-2 border-white/20"
-                  />
-                </div>
-                <h1 className="font-display text-5xl tracking-widest bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
-                  Claudia Cakes
-                </h1>
-                <p className="text-sm text-gray-300 mt-2 uppercase tracking-widest">
-                  Confeitaria Fina <br/> Experiência em forma de doce
-                </p>
-                <p className="text-xs text-gray-400 mt-2">
-                  🎂 Sob medida para momentos inesquecíveis 🌸
-                </p>
-              </header>
-
-              <main className="mt-8 flex flex-col gap-4">
-                <div className="flex flex-col items-center">
-                  <img 
-                    src="https://ugc.production.linktr.ee/4c029ae5-b4ed-4bed-a3ee-29c3372ccc9f_image.png?io=true&size=thumbnail-feature-v1_0" 
-                    alt="Promoção" 
-                    className="rounded-lg mb-4 w-full object-cover"
-                  />
-                  <LinkButton 
-                    href="https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0" 
-                    text="Whatsapp - Palmeira dos Índios" 
-                    icon={<WhatsappIcon />} 
-                    variant="primary"
-                    isExternal={true}
-                  />
-                </div>
+          <React.Fragment>
+            <Preloader loading={loading} />
+            
+            <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-6 pb-12">
+              <div className={`w-full max-w-md mx-auto transition-all duration-1000 ease-out delay-500 ${loading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`}>
+                  
+                  <Header />
                 
-                <LinkButton 
-                  href="https://api.whatsapp.com/message/GB7I5WIV3E4DH1?autoload=1&app_absent=0" 
-                  text="Whatsapp - Estrela de Alagoas" 
-                  icon={<WhatsappIcon />} 
-                  variant="primary"
-                  isExternal={true}
-                />
+                  <main className="space-y-6 flex flex-col items-center relative z-10">
+                    
+                    {/* Highlight Card - WhatsApp Palmeira */}
+                    <div className="w-full relative group">
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-pink to-purple-900 rounded-2xl opacity-40 group-hover:opacity-70 blur transition duration-500"></div>
+                        <div className="relative bg-[#080808] border border-white/5 rounded-2xl p-4 flex flex-col items-center overflow-hidden">
+                            {/* Glass shine effect */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[40px] -translate-y-1/2 translate-x-1/2 rounded-full pointer-events-none"></div>
 
-                <div className="relative my-4 flex items-center justify-center">
-                   <div className="h-1 w-full bg-white/10 rounded-full"></div>
-                   <div 
-                      className="absolute top-0 left-0 h-1 w-full rounded-full opacity-75" 
-                      style={{
-                        backgroundImage: 'repeating-linear-gradient(-45deg, #E53A89, #E53A89 10px, transparent 10px, transparent 20px)',
-                        backgroundSize: '56px 56px',
-                        animation: 'barber-pole 1s linear infinite'
-                      }}
-                    ></div>
-                </div>
+                            {companyConfig.offerImageUrl && (
+                                <div className="w-full mb-4 overflow-hidden rounded-lg border border-white/5 shadow-2xl relative">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                                    <img 
+                                        src={companyConfig.offerImageUrl} 
+                                        alt="Destaque" 
+                                        className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+                                    />
+                                    <div className="absolute bottom-3 left-3 z-20">
+                                        <span className="bg-brand-pink/90 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider backdrop-blur-sm">Promoção</span>
+                                    </div>
+                                </div>
+                            )}
+                            <div className="w-full text-center mb-1">
+                                <h3 className="font-cinzel text-white text-lg">Faça seu Pedido</h3>
+                                <p className="font-inter text-gray-400 text-xs mb-4 font-light">Whatsapp - Palmeira dos Índios</p>
+                            </div>
+                            <LinkButton 
+                                text="Iniciar Atendimento"
+                                subtitle="Clique para falar conosco"
+                                href={companyConfig.whatsappLinkMain}
+                                primary={true}
+                                icon={<WhatsappIcon className="w-5 h-5" />}
+                            />
+                        </div>
+                    </div>
 
-                <LinkButton 
-                  onClick={() => setIsModalOpen(true)}
-                  text="Quem Somos?" 
-                  icon={<UserIcon />} 
-                  variant="secondary"
-                />
-                <LinkButton 
-                  href="https://www.canva.com/design/DAGtoSkJMG4/BmEpZXibMzbntJG0J1Tb_g/view" 
-                  text="Cardápio Claudia Cakes" 
-                  icon={<MenuIcon />} 
-                  variant="secondary"
-                  isExternal={true}
-                />
-                <LinkButton 
-                  href="https://www.instagram.com/claudia_cakes1/" 
-                  text="Siga-nos no Instagram" 
-                  icon={<InstagramIcon />} 
-                  variant="secondary"
-                  isExternal={true}
-                />
-              </main>
+                    {/* Elegant Divider */}
+                    <div className="w-full flex items-center justify-center py-2 opacity-50">
+                       <div className="h-px w-24 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+                       <span className="mx-2 text-[10px] text-gray-600 tracking-widest uppercase">Mais Opções</span>
+                       <div className="h-px w-24 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+                    </div>
+                    
+                    {/* Main Links List */}
+                    <div className="w-full space-y-3">
+                      {mainLinks.map((link, index) => (
+                        <div 
+                          key={link.id}
+                          className="animate-fade-in"
+                          style={{ animationDelay: `${(index + 2) * 150}ms` }}
+                        >
+                          <LinkButton 
+                            text={link.text}
+                            subtitle={link.subtitle}
+                            href={link.href}
+                            primary={link.primary}
+                            iconName={link.iconName}
+                            onClick={() => handleLinkClick(link.action)}
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                  </main>
+              </div>
+              
+              <AboutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
-
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-              <h2 className="font-display text-4xl tracking-wider text-center mb-4 text-brand-pink">Quem Somos</h2>
-              <p className="text-gray-200 text-center leading-relaxed">
-                Na Claudia Cakes, cada doce é uma obra de arte, criada com paixão e os ingredientes mais finos. Somos uma confeitaria dedicada a transformar seus momentos especiais em memórias inesquecíveis, com bolos e doces personalizados que encantam os olhos e o paladar.
-              </p>
-              <p className="text-gray-300 text-center mt-4 text-sm">
-                Nossa missão é levar a felicidade em forma de doce, oferecendo uma experiência única desde a encomenda até a última mordida.
-              </p>
-            </Modal>
-          </div>
+          </React.Fragment>
         );
       };
 
-      // From index.tsx (rendering logic)
+      // --- Mount the App ---
       const rootElement = document.getElementById('root');
-      if (!rootElement) {
-        throw new Error("Could not find root element to mount to");
-      }
-
       const root = ReactDOM.createRoot(rootElement);
       root.render(
         <React.StrictMode>
@@ -500,11 +620,5 @@
         </React.StrictMode>
       );
     </script>
-    
-    <!-- Início da Marca d'água Hyper Tech -->
-    <div class="watermark-hypertech">
-      Desenvolvido por <a href="https://www.hypertechal.com.br/" target="_blank" rel="noopener noreferrer">Hyper Tech</a>
-    </div>
-    <!-- Fim da Marca d'água -->
-  </body>
+</body>
 </html>
