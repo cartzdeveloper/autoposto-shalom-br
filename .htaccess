@@ -1,15 +1,4 @@
-Options -MultiViews
-RewriteEngine On
-RewriteBase /
-
-# --- REGRA 1: CORREÇÃO DE ERRO (LH para LL) ---
-# Se digitar "Parrilha", corrige e abre o arquivo index.html da pasta certa
-RewriteRule ^parrilha316/?$ /parrilla316/index.html [R=301,NC,L]
-
-# --- REGRA 2: CLAUDIA CAKES ---
-# Se digitar ClaudiaCakes (qualquer maiuscula/minuscula), abre o arquivo index.html
-RewriteRule ^claudiacakes/?$ /claudiacakes/index.html [NC,L]
-
-# --- REGRA 3: PARRILLA 316 ---
-# Se digitar Parrilla316 (qualquer maiuscula/minuscula), abre o arquivo index.html
-RewriteRule ^parrilla316/?$ /parrilla316/index.html [NC,L]
+<IfModule mod_speling.c>
+    CheckSpelling On
+    CheckCaseOnly Off
+</IfModule>
