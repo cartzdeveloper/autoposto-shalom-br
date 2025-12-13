@@ -1,22 +1,20 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-# -----------------------------------------------------------
-# REGRA 1: CLAUDIA CAKES
-# -----------------------------------------------------------
-# Se digitarem ClaudiaCakes, ClAuDiA..., etc -> vai para "claudiacakes"
-RewriteRule ^claudiacakes/?$ /claudiacakes/ [R=301,NC,L]
-
+# Garante que o servidor procure por index.html
+DirectoryIndex index.html
 
 # -----------------------------------------------------------
-# REGRA 2: PARRILLA 316 (Com LL - O correto)
+# CLAUDIA CAKES
 # -----------------------------------------------------------
-# Se digitarem Parrilla316, parrilla316, etc -> vai para "parrilla316"
-RewriteRule ^parrilla316/?$ /parrilla316/ [R=301,NC,L]
+# Se digitar ClaudiaCakes (qualquer jeito), abre o index.html da pasta claudiacakes
+RewriteRule ^claudiacakes/?$ /claudiacakes/index.html [R=301,NC,L]
 
+# -----------------------------------------------------------
+# PARRILLA 316
+# -----------------------------------------------------------
+# Se digitar Parrilla316 (qualquer jeito), abre o index.html da pasta parrilla316
+RewriteRule ^parrilla316/?$ /parrilla316/index.html [R=301,NC,L]
 
-# -----------------------------------------------------------
-# REGRA 3: CORREÇÃO DE ERRO (LH para LL)
-# -----------------------------------------------------------
-# Se alguém digitar "Parrilha" (com LH), corrigimos para a pasta certa
-RewriteRule ^parrilha316/?$ /parrilla316/ [R=301,NC,L]
+# Corretor para quem digitar "Parrilha" (com LH)
+RewriteRule ^parrilha316/?$ /parrilla316/index.html [R=301,NC,L]
