@@ -1,27 +1,15 @@
-# Desativa listagem de diretórios e a opção MultiViews (que causa o download errado)
-Options -Indexes -MultiViews
-
-# Garante que o servidor saiba que .html é página web
-AddType text/html .html
-
+Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
-# -------------------------------------------------------------------------
-# REGRA 1: CLAUDIA CAKES
-# Aceita ClaudiaCakes, claudiacakes, etc.
-# Redireciona para a pasta com barra no final
-# -------------------------------------------------------------------------
-RewriteRule ^claudiacakes/?$ /claudiacakes/ [R=301,NC,L]
+# --- REGRA 1: CORREÇÃO DE ERRO (LH para LL) ---
+# Se digitar "Parrilha", corrige e abre o arquivo index.html da pasta certa
+RewriteRule ^parrilha316/?$ /parrilla316/index.html [R=301,NC,L]
 
-# -------------------------------------------------------------------------
-# REGRA 2: PARRILLA 316 (Nome correto com LL)
-# Aceita Parrilla316, parrilla316, etc.
-# -------------------------------------------------------------------------
-RewriteRule ^parrilla316/?$ /parrilla316/ [R=301,NC,L]
+# --- REGRA 2: CLAUDIA CAKES ---
+# Se digitar ClaudiaCakes (qualquer maiuscula/minuscula), abre o arquivo index.html
+RewriteRule ^claudiacakes/?$ /claudiacakes/index.html [NC,L]
 
-# -------------------------------------------------------------------------
-# REGRA 3: CORREÇÃO (Nome errado com LH)
-# Aceita Parrilha316 e joga para a pasta correta parrilla316
-# -------------------------------------------------------------------------
-RewriteRule ^parrilha316/?$ /parrilla316/ [R=301,NC,L]
+# --- REGRA 3: PARRILLA 316 ---
+# Se digitar Parrilla316 (qualquer maiuscula/minuscula), abre o arquivo index.html
+RewriteRule ^parrilla316/?$ /parrilla316/index.html [NC,L]
