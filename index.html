@@ -383,270 +383,330 @@ function _0x45a5() {
       .watermark-hypertech a { color: #F97316; font-weight: 600; text-decoration: none; }
     </style>
   </head>
-  <body class="bg-brand-gray text-gray-800">
-    <div id="root"></div>
+  <body class="bg-brand-gray text-gray-800 loading-active">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-brand-dark flex flex-col items-center justify-center loader-curtain">
+       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-orange/20 rounded-full blur-[100px] pointer-events-none opacity-50 animate-pulse"></div>
+       <div class="relative z-10 text-center w-full max-w-md px-8">
+          <h1 class="text-4xl md:text-5xl font-display font-black text-white mb-2 tracking-tighter">
+             AUTO POSTO
+          </h1>
+          <div class="h-16 flex items-center justify-center mb-8">
+             <span id="preloader-word" class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-white glow-text">
+                Qualidade.
+             </span>
+          </div>
+          <div class="w-full bg-gray-800 h-1 rounded-full overflow-hidden relative">
+             <div id="preloader-bar" class="h-full bg-brand-orange shadow-[0_0_15px_rgba(249,115,22,0.8)] transition-all duration-200 ease-out" style="width: 0%"></div>
+          </div>
+          <div class="flex justify-between items-end mt-2 text-white/50 font-display font-bold text-xs uppercase tracking-widest">
+             <span><i class="fa-solid fa-server mr-2"></i>Iniciando...</span>
+             <span id="preloader-percentage" class="text-2xl text-white">0%</span>
+          </div>
+       </div>
+    </div>
 
-    <script type="text/babel">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 py-5 bg-transparent">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="#" class="relative group">
+           <span id="nav-brand" class="text-2xl font-display font-black tracking-tighter text-white transition-colors duration-300">
+              SHALOM
+           </span>
+           <span class="absolute -bottom-1 left-0 w-0 h-1 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#inicio" class="nav-menu-link text-sm font-bold uppercase tracking-wide text-white/90 hover:text-brand-orange transition-colors">Início</a>
+          <a href="#servicos" class="nav-menu-link text-sm font-bold uppercase tracking-wide text-white/90 hover:text-brand-orange transition-colors">Serviços</a>
+          <a href="#localizacao" class="nav-menu-link text-sm font-bold uppercase tracking-wide text-white/90 hover:text-brand-orange transition-colors">Localização</a>
+          <a href="https://wa.me/5582981061917" target="_blank" class="bg-brand-orange text-white px-6 py-2 rounded-full font-bold hover:bg-orange-600 transition-all hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] transform hover:-translate-y-1">
+            <i class="fa-brands fa-whatsapp mr-2"></i>Contato
+          </a>
+        </div>
 
-      // --- Componente: Cinematic Intro Loader ---
-      const Preloader = ({ onComplete }) => {
-        const [progress, setProgress] = React.useState(0);
-        const [isExiting, setIsExiting] = React.useState(false);
-        const words = ["Qualidade.", "Confiança.", "Shalom."];
+        <button id="menu-toggle" class="md:hidden p-2 focus:outline-none text-white">
+           <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+      
+      <!-- Mobile Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t p-6 shadow-xl flex flex-col space-y-4 text-center">
+          <a href="#inicio" class="mobile-menu-link text-gray-800 font-bold py-2">Início</a>
+          <a href="#servicos" class="mobile-menu-link text-gray-800 font-bold py-2">Serviços</a>
+          <a href="#localizacao" class="mobile-menu-link text-gray-800 font-bold py-2">Localização</a>
+          <a href="https://wa.me/5582981061917" target="_blank" class="text-brand-orange font-bold py-2">Falar no WhatsApp</a>
+      </div>
+    </nav>
 
-        React.useEffect(() => {
-          document.body.classList.add('loading-active');
-          const timer = setInterval(() => {
-            setProgress((old) => {
-              if (old === 100) {
-                clearInterval(timer);
-                setTimeout(() => {
-                   setIsExiting(true);
-                   setTimeout(() => {
-                     document.body.classList.remove('loading-active');
-                     onComplete();
-                   }, 1000); 
-                }, 500); 
-                return 100;
-              }
-              const diff = Math.random() * 10;
-              return Math.min(old + diff, 100);
-            });
-          }, 150);
-          return () => clearInterval(timer);
-        }, []);
+    <!-- Main Container (Hidden initially, Fades in after Preloader) -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+      <!-- Hero -->
+      <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://i.imgur.com/Y555CPn.jpeg" alt="Background" class="w-full h-full object-cover scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white mt-20">
+          <span class="inline-block px-4 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
+            <i class="fa-solid fa-clock mr-2 text-brand-orange"></i> Aberto 05:00 - 22:00
+          </span>
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-none mb-6 text-shadow">
+            AUTO POSTO <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">SHALOM</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
+            Mais do que combustível. Uma experiência completa de conveniência e sabor na BR-316.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+             <a href="#servicos" class="px-8 py-4 bg-white text-brand-dark font-black rounded-full hover:bg-gray-100 transition-transform transform hover:scale-105 group">
+                <i class="fa-solid fa-bell-concierge mr-2 text-brand-orange group-hover:animate-bounce"></i> NOSSOS SERVIÇOS
+             </a>
+             <a href="https://maps.app.goo.gl/gkQkfFqFVGsdv8XQA" target="_blank" class="px-8 py-4 bg-brand-orange text-white font-black rounded-full hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] transition-transform transform hover:scale-105">
+                <i class="fa-solid fa-location-arrow mr-2"></i> COMO CHEGAR
+             </a>
+          </div>
+        </div>
+      </section>
 
-        return (
-          <div className={`fixed inset-0 z-[100] bg-brand-dark flex flex-col items-center justify-center loader-curtain ${isExiting ? 'slide-up' : ''}`}>
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-orange/20 rounded-full blur-[100px] pointer-events-none opacity-50 animate-pulse"></div>
-             <div className="relative z-10 text-center w-full max-w-md px-8">
-                <h1 className="text-4xl md:text-5xl font-display font-black text-white mb-2 tracking-tighter">
-                   AUTO POSTO
-                </h1>
-                <div className="h-16 flex items-center justify-center mb-8">
-                   <span className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-white glow-text">
-                      {words[Math.min(Math.floor(progress / 33), 2)]}
-                   </span>
+      <!-- Services -->
+      <section id="servicos" class="py-24 bg-brand-gray">
+        <div class="container mx-auto px-6">
+           <div class="grid md:grid-cols-3 gap-8">
+             <!-- Combustível Premium -->
+             <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="h-64 overflow-hidden relative">
+                   <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10"></div>
+                   <img src="https://i.imgur.com/GItjNX4.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
-                <div className="w-full bg-gray-800 h-1 rounded-full overflow-hidden relative">
-                   <div 
-                      className="h-full bg-brand-orange shadow-[0_0_15px_rgba(249,115,22,0.8)] transition-all duration-200 ease-out"
-                      style={{ width: `${progress}%` }}
-                   ></div>
-                </div>
-                <div className="flex justify-between items-end mt-2 text-white/50 font-display font-bold text-xs uppercase tracking-widest">
-                   <span><i className="fa-solid fa-server mr-2"></i>Iniciando...</span>
-                   <span className="text-2xl text-white">{Math.round(progress)}%</span>
+                <div class="p-8 relative">
+                   <div class="absolute -top-8 right-8 w-16 h-16 bg-brand-orange text-white rounded-2xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                      <i class="fa-solid fa-gas-pump text-3xl"></i>
+                   </div>
+                   <h3 class="text-2xl font-bold text-brand-dark mb-2">Combustível Premium</h3>
+                   <p class="text-gray-500 leading-relaxed">Qualidade garantida e aferida diariamente para o máximo desempenho.</p>
                 </div>
              </div>
-          </div>
-        );
-      };
 
-      // --- Navbar ---
-      const Navbar = () => {
-        const [isOpen, setIsOpen] = React.useState(false);
-        const [scrolled, setScrolled] = React.useState(false);
-
-        React.useEffect(() => {
-          const handleScroll = () => setScrolled(window.scrollY > 20);
-          window.addEventListener('scroll', handleScroll);
-          return () => window.removeEventListener('scroll', handleScroll);
-        }, []);
-
-        return (
-          <nav className={`fixed w-full z-50 top-0 transition-all duration-300 ${scrolled ? 'glass-nav shadow-lg py-3' : 'bg-transparent py-5'}`}>
-            <div className="container mx-auto px-6 flex justify-between items-center">
-              <a href="#" className="relative group">
-                 <span className={`text-2xl font-display font-black tracking-tighter transition-colors duration-300 ${scrolled ? 'text-brand-dark' : 'text-white'}`}>
-                    SHALOM
-                 </span>
-                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              
-              <div className="hidden md:flex items-center space-x-8">
-                {['Início', 'Serviços', 'Localização'].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className={`text-sm font-bold uppercase tracking-wide hover:text-brand-orange transition-colors ${scrolled ? 'text-gray-600' : 'text-white/90'}`}>
-                    {item}
-                  </a>
-                ))}
-                <a href="#localizacao" className="bg-brand-orange text-white px-6 py-2 rounded-full font-bold hover:bg-orange-600 transition-all hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] transform hover:-translate-y-1">
-                  <i className="fa-brands fa-whatsapp mr-2"></i>Contato
-                </a>
-              </div>
-
-              <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden p-2 focus:outline-none ${scrolled ? 'text-gray-800' : 'text-white'}`}>
-                 <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'} text-2xl`}></i>
-              </button>
-            </div>
-            
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white border-t p-6 shadow-xl flex flex-col space-y-4 text-center">
-                    {['Início', 'Serviços', 'Localização'].map(link => (
-                        <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setIsOpen(false)} className="text-gray-800 font-bold py-2">{link}</a>
-                    ))}
-                    <a href="https://wa.me/5582981061917" className="text-brand-orange font-bold py-2">Falar no WhatsApp</a>
+             <!-- Loja & Padaria -->
+             <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="h-64 overflow-hidden relative">
+                   <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10"></div>
+                   <img src="https://i.imgur.com/eHSNajF.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
-            )}
-          </nav>
-        );
-      };
-
-      // --- Hero ---
-      const Hero = () => (
-          <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 z-0">
-                <img src="https://i.imgur.com/Y555CPn.jpeg" alt="Background" className="w-full h-full object-cover scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent"></div>
-            </div>
-            <div className="container mx-auto px-6 relative z-10 text-center text-white mt-20">
-              <span className="inline-block px-4 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
-                <i className="fa-solid fa-clock mr-2 text-brand-orange"></i> Aberto 05:00 - 22:00
-              </span>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-none mb-6 text-shadow">
-                AUTO POSTO <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">SHALOM</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
-                Mais do que combustível. Uma experiência completa de conveniência e sabor na BR-316.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                 <a href="#servicos" className="px-8 py-4 bg-white text-brand-dark font-black rounded-full hover:bg-gray-100 transition-transform transform hover:scale-105 group">
-                    <i className="fa-solid fa-bell-concierge mr-2 text-brand-orange group-hover:animate-bounce"></i> NOSSOS SERVIÇOS
-                 </a>
-                 <a href="https://maps.app.goo.gl/gkQkfFqFVGsdv8XQA" target="_blank" className="px-8 py-4 bg-brand-orange text-white font-black rounded-full hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] transition-transform transform hover:scale-105">
-                    <i className="fa-solid fa-location-arrow mr-2"></i> COMO CHEGAR
-                 </a>
-              </div>
-            </div>
-          </section>
-      );
-
-      // --- Services ---
-      const Services = () => (
-        <section id="servicos" className="py-24 bg-brand-gray">
-          <div className="container mx-auto px-6">
-             <div className="grid md:grid-cols-3 gap-8">
-               {[
-                 { title: "Combustível Premium", icon: "fa-solid fa-gas-pump", img: "https://i.imgur.com/GItjNX4.jpeg", desc: "Qualidade garantida e aferida diariamente para o máximo desempenho." },
-                 { title: "Loja & Padaria", icon: "fa-solid fa-mug-hot", img: "https://i.imgur.com/eHSNajF.jpeg", desc: "Pães quentinhos, lanches rápidos e um café expresso delicioso." },
-                 { title: "Parrilla 316", icon: "fa-solid fa-fire-flame-curved", img: "https://i.imgur.com/eGO7pcK.jpeg", desc: "O autêntico churrasco com cortes nobres em ambiente familiar." }
-               ].map((item, idx) => (
-                 <div key={idx} className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                    <div className="h-64 overflow-hidden relative">
-                       <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10"></div>
-                       <img src={item.img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    </div>
-                    <div className="p-8 relative">
-                       <div className="absolute -top-8 right-8 w-16 h-16 bg-brand-orange text-white rounded-2xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                          <i className={`${item.icon} text-3xl`}></i>
-                       </div>
-                       <h3 className="text-2xl font-bold text-brand-dark mb-2">{item.title}</h3>
-                       <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                    </div>
-                 </div>
-               ))}
+                <div class="p-8 relative">
+                   <div class="absolute -top-8 right-8 w-16 h-16 bg-brand-orange text-white rounded-2xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                      <i class="fa-solid fa-mug-hot text-3xl"></i>
+                   </div>
+                   <h3 class="text-2xl font-bold text-brand-dark mb-2">Loja & Padaria</h3>
+                   <p class="text-gray-500 leading-relaxed">Pães quentinhos, lanches rápidos e um café expresso delicioso.</p>
+                </div>
              </div>
-          </div>
-        </section>
-      );
 
-      // --- Location ---
-      const Location = () => (
-         <section id="localizacao" className="bg-white py-24">
-             <div className="container mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
-                 <div className="md:w-1/2">
-                    <h2 className="text-4xl md:text-5xl font-display font-black text-brand-dark mb-6">ESTAMOS NA <br/><span className="text-brand-orange">ROTA CERTA</span></h2>
-                    <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-                       Localizado estrategicamente na BR-316, somos o ponto de parada oficial para quem busca segurança, preço justo e comida de qualidade.
-                    </p>
-                    <div className="space-y-6">
-                        <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 group hover:border-brand-orange/30 transition-colors">
-                            <div className="text-brand-orange bg-orange-100 p-4 rounded-full group-hover:scale-110 transition-transform"><i className="fa-solid fa-location-dot text-xl"></i></div>
-                            <div>
-                                <h4 className="font-bold text-brand-dark">Endereço</h4>
-                                <p className="text-sm text-gray-500">BR-316, Palmeira dos Índios - AL</p>
-                            </div>
+             <!-- Parrilla 316 -->
+             <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="h-64 overflow-hidden relative">
+                   <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10"></div>
+                   <img src="https://i.imgur.com/eGO7pcK.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <div class="p-8 relative">
+                   <div class="absolute -top-8 right-8 w-16 h-16 bg-brand-orange text-white rounded-2xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                      <i class="fa-solid fa-fire-flame-curved text-3xl"></i>
+                   </div>
+                   <h3 class="text-2xl font-bold text-brand-dark mb-2">Parrilla 316</h3>
+                   <p class="text-gray-500 leading-relaxed">O autêntico churrasco com cortes nobres em ambiente familiar.</p>
+                </div>
+             </div>
+           </div>
+        </div>
+      </section>
+
+      <!-- Location -->
+      <section id="localizacao" class="bg-white py-24">
+         <div class="container mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+             <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-display font-black text-brand-dark mb-6">ESTAMOS NA <br/><span class="text-brand-orange">ROTA CERTA</span></h2>
+                <p class="text-gray-500 text-lg mb-8 leading-relaxed">
+                   Localizado estrategicamente na BR-316, somos o ponto de parada oficial para quem busca segurança, preço justo e comida de qualidade.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 group hover:border-brand-orange/30 transition-colors">
+                        <div class="text-brand-orange bg-orange-100 p-4 rounded-full group-hover:scale-110 transition-transform"><i class="fa-solid fa-location-dot text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark">Endereço</h4>
+                            <p class="text-sm text-gray-500">BR-316, Palmeira dos Índios - AL</p>
                         </div>
-                        <a href="https://wa.me/5582981061917" className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 group cursor-pointer hover:border-green-400 hover:bg-green-50 transition-colors">
-                            <div className="text-green-600 bg-green-100 p-4 rounded-full group-hover:scale-110 transition-transform"><i className="fa-brands fa-whatsapp text-2xl"></i></div>
-                            <div>
-                                <h4 className="font-bold text-brand-dark group-hover:text-green-800">WhatsApp</h4>
-                                <p className="text-sm text-gray-500 group-hover:text-green-700">(82) 98106-1917</p>
-                            </div>
-                        </a>
                     </div>
-                 </div>
-                 <div className="md:w-1/2 h-[500px] w-full bg-gray-200 rounded-3xl overflow-hidden shadow-2xl relative group border-4 border-white">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.8782688774772!2d-36.6498493261637!3d-9.432075098740755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7063fbc43713e5f%3A0xf461e7fff5b4feb1!2sAuto%20Posto%20Shalom!5e0!3m2!1spt-BR!2sus!4v1756567590009!5m2!1spt-BR!2sus" className="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy"></iframe>
-                    <a href="https://maps.app.goo.gl/gkQkfFqFVGsdv8XQA" target="_blank" className="absolute bottom-6 right-6 bg-brand-orange text-white px-6 py-3 rounded-full shadow-xl font-bold text-sm flex items-center gap-2 hover:bg-orange-700 transition-colors">
-                        <i className="fa-solid fa-directions"></i> Ver Rota
+                    <a href="https://wa.me/5582981061917" target="_blank" class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 group cursor-pointer hover:border-green-400 hover:bg-green-50 transition-colors">
+                        <div class="text-green-600 bg-green-100 p-4 rounded-full group-hover:scale-110 transition-transform"><i class="fa-brands fa-whatsapp text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark group-hover:text-green-800">WhatsApp</h4>
+                            <p class="text-sm text-gray-500 group-hover:text-green-700">(82) 98106-1917</p>
+                        </div>
                     </a>
-                 </div>
-             </div>
-         </section>
-      );
-
-      // --- Footer ---
-      const Footer = () => (
-          <footer className="bg-brand-dark text-white border-t border-gray-800">
-             <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-2xl font-display font-black tracking-tighter">
-                   AUTO POSTO <span className="text-brand-orange">SHALOM</span>
-                </div>
-                <div className="flex gap-6">
-                   <a href="https://www.instagram.com/autopostoshalomoficial/" target="_blank" className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110">
-                       <i className="fa-brands fa-instagram text-xl"></i>
-                   </a>
-                   <a href="https://wa.me/5582981061917" target="_blank" className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110">
-                       <i className="fa-brands fa-whatsapp text-xl"></i>
-                   </a>
                 </div>
              </div>
-             <div className="text-center py-6 text-gray-600 text-sm border-t border-gray-900 bg-black flex justify-center items-center gap-2">
-                <span>&copy; {new Date().getFullYear()} Auto Posto Shalom.</span>
-                <span className="hidden md:inline">•</span>
-                <span>Todos os direitos reservados.</span>
+             <div class="md:w-1/2 h-[500px] w-full bg-gray-200 rounded-3xl overflow-hidden shadow-2xl relative group border-4 border-white">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.8782688774772!2d-36.6498493261637!3d-9.432075098740755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7063fbc43713e5f%3A0xf461e7fff5b4feb1!2sAuto%20Posto%20Shalom!5e0!3m2!1spt-BR!2sus!4v1756567590009!5m2!1spt-BR!2sus" class="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy"></iframe>
+                <a href="https://maps.app.goo.gl/gkQkfFqFVGsdv8XQA" target="_blank" class="absolute bottom-6 right-6 bg-brand-orange text-white px-6 py-3 rounded-full shadow-xl font-bold text-sm flex items-center gap-2 hover:bg-orange-700 transition-colors">
+                    <i class="fa-solid fa-directions"></i> Ver Rota
+                </a>
              </div>
-          </footer>
-      );
+         </div>
+      </section>
 
-      // --- Floating Action ---
-      const FloatingButton = () => {
-         const [visible, setVisible] = React.useState(false);
-         React.useEffect(() => {
-            const handleScroll = () => setVisible(window.scrollY > 300);
-            window.addEventListener('scroll', handleScroll);
-            return () => window.removeEventListener('scroll', handleScroll);
-         }, []);
+      <!-- Footer -->
+      <footer class="bg-brand-dark text-white border-t border-gray-800">
+         <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-display font-black tracking-tighter">
+               AUTO POSTO <span class="text-brand-orange">SHALOM</span>
+            </div>
+            <div class="flex gap-6">
+               <a href="https://www.instagram.com/autopostoshalomoficial/" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110">
+                   <i class="fa-brands fa-instagram text-xl"></i>
+               </a>
+               <a href="https://wa.me/5582981061917" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110">
+                   <i class="fa-brands fa-whatsapp text-xl"></i>
+               </a>
+            </div>
+         </div>
+         <div class="text-center py-6 text-gray-600 text-sm border-t border-gray-900 bg-black flex justify-center items-center gap-2">
+            <span>&copy; <span id="current-year"></span> Auto Posto Shalom.</span>
+            <span class="hidden md:inline">•</span>
+            <span>Todos os direitos reservados.</span>
+         </div>
+      </footer>
+    </div>
 
-         return (
-            <a href="https://maps.app.goo.gl/gkQkfFqFVGsdv8XQA" target="_blank" 
-               className={`fixed bottom-24 right-4 z-40 bg-brand-orange text-white p-4 rounded-full shadow-lg shadow-orange-500/50 transition-all duration-500 transform ${visible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-75'}`}>
-               <i className="fa-solid fa-map-location-dot text-2xl"></i>
-            </a>
-         );
+    <!-- Floating Action Button -->
+    <a id="floating-btn" href="https://maps.app.goo.gl/gkQkfFqFVGsdv8XQA" target="_blank" 
+       class="fixed bottom-24 right-4 z-40 bg-brand-orange text-white p-4 rounded-full shadow-lg shadow-orange-500/50 transition-all duration-500 transform translate-y-20 opacity-0 scale-75">
+       <i class="fa-solid fa-map-location-dot text-2xl"></i>
+    </a>
+
+    <!-- Interactive Scripts -->
+    <script>
+      // DOM Elements
+      const preloader = document.getElementById('preloader');
+      const preloaderWord = document.getElementById('preloader-word');
+      const preloaderBar = document.getElementById('preloader-bar');
+      const preloaderPercentage = document.getElementById('preloader-percentage');
+      const navbar = document.getElementById('navbar');
+      const navBrand = document.getElementById('nav-brand');
+      const navMenuLinks = document.querySelectorAll('.nav-menu-link');
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      const mainContent = document.getElementById('main-content');
+      const floatingBtn = document.getElementById('floating-btn');
+      const currentYearSpan = document.getElementById('current-year');
+
+      // Set current copyright year
+      if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
       }
 
-      const App = () => {
-        const [loaded, setLoaded] = React.useState(false);
+      // Preloader progress emulation
+      let progress = 0;
+      const words = ["Qualidade.", "Confiança.", "Shalom."];
+      
+      document.body.classList.add('loading-active');
 
-        return (
-          <>
-             {!loaded && <Preloader onComplete={() => setLoaded(true)} />}
-             <div>
-                <Navbar />
-                <Hero />
-                <Services />
-                <Location />
-                <Footer />
-                <FloatingButton />
-             </div>
-          </>
-        );
-      };
+      const progressInterval = setInterval(() => {
+        progress += Math.random() * 12;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(progressInterval);
+          
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('slide-up');
+            }
+            setTimeout(() => {
+              document.body.classList.remove('loading-active');
+              if (mainContent) {
+                mainContent.classList.remove('opacity-0');
+                mainContent.classList.add('opacity-100');
+              }
+            }, 1000);
+          }, 500);
+        }
 
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<App />);
+        // Update progress bar width and percentage text
+        if (preloaderBar) preloaderBar.style.width = `${progress}%`;
+        if (preloaderPercentage) preloaderPercentage.textContent = `${Math.round(progress)}%`;
+
+        // Cycle through highlights
+        const index = Math.min(Math.floor(progress / 33), 2);
+        if (preloaderWord) preloaderWord.textContent = words[index];
+      }, 120);
+
+      // Scroll listeners (Navbar styling and Floating Action Button reveal)
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY > 20;
+        
+        if (scrolled) {
+          navbar.classList.add('glass-nav', 'shadow-lg', 'py-3');
+          navbar.classList.remove('bg-transparent', 'py-5');
+          
+          navBrand.classList.add('text-brand-dark');
+          navBrand.classList.remove('text-white');
+          
+          navMenuLinks.forEach(link => {
+            link.classList.add('text-gray-600');
+            link.classList.remove('text-white/90');
+          });
+          
+          menuToggle.classList.add('text-gray-800');
+          menuToggle.classList.remove('text-white');
+        } else {
+          navbar.classList.remove('glass-nav', 'shadow-lg', 'py-3');
+          navbar.classList.add('bg-transparent', 'py-5');
+          
+          navBrand.classList.remove('text-brand-dark');
+          navBrand.classList.add('text-white');
+          
+          navMenuLinks.forEach(link => {
+            link.classList.remove('text-gray-600');
+            link.classList.add('text-white/90');
+          });
+          
+          menuToggle.classList.remove('text-gray-800');
+          menuToggle.classList.add('text-white');
+        }
+
+        // Show/Hide Floating Action Button
+        if (window.scrollY > 300) {
+          floatingBtn.classList.remove('translate-y-20', 'opacity-0', 'scale-75');
+          floatingBtn.classList.add('translate-y-0', 'opacity-100', 'scale-100');
+        } else {
+          floatingBtn.classList.add('translate-y-20', 'opacity-0', 'scale-75');
+          floatingBtn.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
+        }
+      });
+
+      // Mobile Hamburguer Navigation Toggle
+      menuToggle.addEventListener('click', () => {
+        const isClosed = mobileMenu.classList.contains('hidden');
+        if (isClosed) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+
+      // Auto-close menu when link is clicked
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
     </script>
     
     <!-- Watermark -->
