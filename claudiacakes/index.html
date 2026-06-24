@@ -513,7 +513,250 @@ function _0x45a5() {
     </script>
 </head>
 <body>
-    <div id="root"></div>
+    <!-- Preloader Screen -->
+    <div id="preloader" class="preloader-bg">
+      <div class="flex flex-col items-center justify-center relative">
+        <div class="relative w-40 h-40 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full border-[1px] border-white/5"></div>
+            <svg class="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(229, 58, 137, 0.2)" stroke-width="1" />
+              <circle cx="50" cy="50" r="48" fill="none" stroke="#E53A89" stroke-width="1" stroke-dasharray="60 240" stroke-linecap="round" />
+            </svg>
+            <div class="absolute inset-0 bg-brand-pink/10 rounded-full blur-2xl animate-pulse-slow"></div>
+            <div class="relative w-28 h-28 rounded-full overflow-hidden border border-white/10 shadow-2xl z-10">
+                <img
+                    src="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0"
+                    alt="Loading..."
+                    class="w-full h-full object-cover opacity-90 brightness-110"
+                />
+            </div>
+        </div>
+        <div class="mt-8 text-center space-y-2">
+            <h2 class="font-cinzel text-2xl tracking-[0.4em] text-white/90 text-glow-pink">CLAUDIA CAKES</h2>
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-brand-pink animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-brand-pink animate-bounce" style="animation-delay: 0.2s"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-brand-pink animate-bounce" style="animation-delay: 0.4s"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-6 pb-24">
+      <div id="main-content" class="w-full max-w-md mx-auto opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+          
+          <!-- Header -->
+          <header class="flex flex-col items-center text-center mb-10 relative z-10">
+            <div class="relative mb-6 group cursor-default">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-brand-pink/20 blur-[50px] rounded-full pointer-events-none"></div>
+              <img
+                src="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0"
+                alt="CLAUDIA CAKES Logo"
+                class="relative w-32 h-32 rounded-full object-cover p-1 bg-[#0a0a0a] ring-1 ring-white/10 shadow-2xl animate-float brightness-105 contrast-110"
+              />
+            </div>
+            <div class="space-y-3">
+              <h1 class="font-cinzel font-bold text-4xl sm:text-5xl tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-brand-pink via-white to-gray-400 drop-shadow-sm">
+                CLAUDIA CAKES
+              </h1>
+              <div class="flex items-center justify-center gap-3 opacity-60">
+                <div class="h-px w-8 bg-gradient-to-r from-transparent to-brand-gold"></div>
+                <div class="w-1.5 h-1.5 rotate-45 bg-brand-gold"></div>
+                <div class="h-px w-8 bg-gradient-to-l from-transparent to-brand-gold"></div>
+              </div>
+              <p class="font-inter text-xs text-gray-400 uppercase tracking-[0.2em] font-light max-w-sm mx-auto leading-relaxed">
+                Confeitaria Fina
+              </p>
+            </div>
+          </header>
+
+          <!-- Main Links -->
+          <main class="space-y-6 flex flex-col items-center relative z-10">
+            <!-- Highlight Card -->
+            <div class="w-full relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-pink to-purple-900 rounded-2xl opacity-40 group-hover:opacity-70 blur transition duration-500"></div>
+                <div class="relative bg-[#080808] border border-white/5 rounded-2xl p-4 flex flex-col items-center overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[40px] -translate-y-1/2 translate-x-1/2 rounded-full pointer-events-none"></div>
+                    <div class="w-full mb-4 overflow-hidden rounded-lg border border-white/5 shadow-2xl relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                        <img 
+                            src="https://ugc.production.linktr.ee/4c029ae5-b4ed-4bed-a3ee-29c3372ccc9f_image.png?io=true&size=thumbnail-feature-v1_0" 
+                            alt="Destaque" 
+                            class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+                        />
+                        <div class="absolute bottom-3 left-3 z-20">
+                            <span class="bg-brand-pink/90 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider backdrop-blur-sm">Promoção</span>
+                        </div>
+                    </div>
+                    <div class="w-full text-center mb-1">
+                        <h3 class="font-cinzel text-white text-lg">Faça seu Pedido</h3>
+                        <p class="font-inter text-gray-400 text-xs mb-4 font-light">Whatsapp - Palmeira dos Índios</p>
+                    </div>
+                    
+                    <a
+                      href="https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none bg-gradient-to-r from-brand-pink via-brand-rose to-purple-900 text-white shadow-lg shadow-brand-pink/40 hover:shadow-brand-pink/50 border border-brand-pink/30"
+                    >
+                      <div class="mr-4 p-2 rounded-lg bg-white/10 text-white transition-all duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.037l-1.03 3.777 3.847-1.002z" />
+                        </svg>
+                      </div>
+                      <div class="flex flex-col text-left">
+                        <span class="font-kanit tracking-wide text-base font-bold">Iniciar Atendimento</span>
+                        <span class="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">Clique para falar conosco</span>
+                      </div>
+                      <svg class="w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Separator -->
+            <div class="w-full flex items-center justify-center py-2 opacity-50">
+               <div class="h-px w-24 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+               <span class="mx-2 text-[10px] text-gray-600 tracking-widest uppercase">Mais Opções</span>
+               <div class="h-px w-24 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+            </div>
+            
+            <!-- Links List -->
+            <div class="w-full space-y-3">
+              <!-- Whatsapp - Estrela de Alagoas -->
+              <a
+                href="https://api.whatsapp.com/message/GB7I5WIV3E4DH1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none glass-button text-gray-100"
+              >
+                <div class="mr-4 p-2 rounded-lg bg-white/5 text-gray-300 group-hover:bg-brand-pink/20 group-hover:text-brand-pink transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.037l-1.03 3.777 3.847-1.002z" />
+                  </svg>
+                </div>
+                <div class="flex flex-col text-left">
+                  <span class="font-kanit tracking-wide text-base font-medium group-hover:text-brand-pink transition-colors">Whatsapp - Estrela de Alagoas</span>
+                  <span class="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">Atendimento regional</span>
+                </div>
+                <svg class="w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 text-gray-400 group-hover:text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <!-- Cardápio Claudia Cakes -->
+              <a
+                href="https://www.canva.com/design/DAGtoSkJMG4/BmEpZXibMzbntJG0J1Tb_g/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none glass-button text-gray-100"
+              >
+                <div class="mr-4 p-2 rounded-lg bg-white/5 text-gray-300 group-hover:bg-brand-pink/20 group-hover:text-brand-pink transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="flex flex-col text-left">
+                  <span class="font-kanit tracking-wide text-base font-medium group-hover:text-brand-pink transition-colors">Cardápio Claudia Cakes</span>
+                  <span class="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">Conheça nossas delícias</span>
+                </div>
+                <svg class="w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 text-gray-400 group-hover:text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <!-- Siga-nos no Instagram -->
+              <a
+                href="https://www.instagram.com/claudia_cakes1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none glass-button text-gray-100"
+              >
+                <div class="mr-4 p-2 rounded-lg bg-white/5 text-gray-300 group-hover:bg-brand-pink/20 group-hover:text-brand-pink transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
+                  </svg>
+                </div>
+                <div class="flex flex-col text-left">
+                  <span class="font-kanit tracking-wide text-base font-medium group-hover:text-brand-pink transition-colors">Siga-nos no Instagram</span>
+                  <span class="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">@claudia_cakes1</span>
+                </div>
+                <svg class="w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 text-gray-400 group-hover:text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <!-- Quem Somos? -->
+              <button
+                id="btn-about"
+                class="group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none glass-button text-gray-100"
+              >
+                <div class="mr-4 p-2 rounded-lg bg-white/5 text-gray-300 group-hover:bg-brand-pink/20 group-hover:text-brand-pink transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M20 21a8 8 0 0 0-16 0" />
+                  </svg>
+                </div>
+                <div class="flex flex-col text-left">
+                  <span class="font-kanit tracking-wide text-base font-medium group-hover:text-brand-pink transition-colors">Quem Somos?</span>
+                  <span class="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">Nossa história e amor</span>
+                </div>
+                <svg class="w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 text-gray-400 group-hover:text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </main>
+      </div>
+    </div>
+
+    <!-- About Modal -->
+    <div
+      id="about-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="w-full max-w-lg m-4 bg-[#0a0a0a] border border-white/10 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.8)] p-8 relative max-h-[90vh] overflow-y-auto custom-scrollbar transition-transform duration-300 scale-95"
+        id="about-modal-content"
+      >
+        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-pink/50 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-pink/20 to-transparent"></div>
+
+        <button
+          id="btn-close-modal"
+          class="absolute top-4 right-4 p-2 text-gray-500 hover:text-white hover:bg-white/10 rounded-full transition-all"
+          aria-label="Fechar modal"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        
+        <div class="mb-8 text-center">
+            <span class="text-brand-pink uppercase tracking-[0.2em] text-xs font-bold mb-2 block">Claudia Cakes</span>
+            <h2 class="font-cinzel text-3xl text-white tracking-wide mb-3">
+              Quem Somos
+            </h2>
+            <div class="w-16 h-0.5 bg-brand-pink/60 mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="space-y-6 text-gray-300 font-inter font-light leading-relaxed text-sm sm:text-base text-justify">
+          <p class="first-letter:text-2xl first-letter:text-brand-pink first-letter:font-cinzel first-letter:mr-1">Na Claudia Cakes, cada doce é uma obra de arte, criada com paixão e os ingredientes mais finos. Somos uma confeitaria dedicada a transformar seus momentos especiais em memórias inesquecíveis, com bolos e doces personalizados que encantam os olhos e o paladar.</p>
+          <p class="first-letter:text-2xl first-letter:text-brand-pink first-letter:font-cinzel first-letter:mr-1">Nossa missão é levar a felicidade em forma de doce, oferecendo uma experiência única desde a encomenda até a última mordida. Seja para um casamento, aniversário ou um simples café da tarde, estamos aqui para adoçar sua vida.</p>
+        </div>
+        
+        <div class="mt-10 pt-6 border-t border-white/5 text-center flex flex-col items-center">
+            <img src="https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0" alt="Logo Small" class="w-10 h-10 rounded-full opacity-50 grayscale hover:grayscale-0 transition-all mb-3" />
+            <p class="text-[10px] text-gray-600 font-inter tracking-widest uppercase">
+                Feito com amor
+            </p>
+        </div>
+      </div>
+    </div>
     
     <!-- Watermark fixed outside React root for persistence -->
     <div class="watermark-container">
@@ -521,415 +764,76 @@ function _0x45a5() {
         Desenvolvido por <a href="https://www.hypertechal.com.br" target="_blank" rel="noopener noreferrer">Hyper Tech</a>
       </div>
     </div>
-    
-    <!-- React Libraries -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <!-- Babel for JSX Transpilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Main Application Script -->
-    <script type="text/babel">
-      const { useState, useEffect } = React;
+    <!-- Main Application Script (Vanilla JavaScript) -->
+    <script>
+      // DOM Elements
+      const preloader = document.getElementById('preloader');
+      const mainContent = document.getElementById('main-content');
+      const btnAbout = document.getElementById('btn-about');
+      const aboutModal = document.getElementById('about-modal');
+      const aboutModalContent = document.getElementById('about-modal-content');
+      const btnCloseModal = document.getElementById('btn-close-modal');
 
-      // --- Constants ---
-      const companyConfig = {
-        name: "CLAUDIA CAKES",
-        logoUrl: "https://ugc.production.linktr.ee/c0994013-3279-4bf7-9e51-0d79697759ea_LOGO-COM-FUNDO-ROSA.jpeg?io=true&size=avatar-v3_0",
-        tagline: "Confeitaria Fina",
-        description: "Experiência em forma de doce. Sob medida para momentos inesquecíveis.",
-        whatsappLinkMain: "https://api.whatsapp.com/send/?phone=5582981691020&text&type=phone_number&app_absent=0",
-        offerImageUrl: "https://ugc.production.linktr.ee/4c029ae5-b4ed-4bed-a3ee-29c3372ccc9f_image.png?io=true&size=thumbnail-feature-v1_0",
-        
-        about: {
-          title: "Quem Somos",
-          paragraphs: [
-            "Na Claudia Cakes, cada doce é uma obra de arte, criada com paixão e os ingredientes mais finos. Somos uma confeitaria dedicada a transformar seus momentos especiais em memórias inesquecíveis, com bolos e doces personalizados que encantam os olhos e o paladar.",
-            "Nossa missão é levar a felicidade em forma de doce, oferecendo uma experiência única desde a encomenda até a última mordida. Seja para um casamento, aniversário ou um simples café da tarde, estamos aqui para adoçar sua vida."
-          ]
-        }
-      };
-
-      const mainLinks = [
-        {
-          id: 1,
-          text: "Whatsapp - Estrela de Alagoas",
-          href: "https://api.whatsapp.com/message/GB7I5WIV3E4DH1?autoload=1&app_absent=0",
-          iconName: "whatsapp",
-          subtitle: "Atendimento regional",
-          primary: false
-        },
-        {
-          id: 2,
-          text: "Cardápio Claudia Cakes",
-          href: "https://www.canva.com/design/DAGtoSkJMG4/BmEpZXibMzbntJG0J1Tb_g/view",
-          iconName: "menu",
-          subtitle: "Conheça nossas delícias",
-          primary: false
-        },
-        {
-          id: 3,
-          text: "Siga-nos no Instagram",
-          href: "https://www.instagram.com/claudia_cakes1/",
-          iconName: "instagram",
-          subtitle: "@claudia_cakes1",
-          primary: false
-        },
-        {
-          id: 4,
-          text: "Quem Somos?",
-          action: "open_modal",
-          iconName: "user",
-          subtitle: "Nossa história e amor",
-          primary: false
-        }
-      ];
-
-      // --- Icons ---
-      const WhatsappIcon = ({ className }) => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.847 6.037l-1.03 3.777 3.847-1.002z" />
-        </svg>
-      );
-
-      const InstagramIcon = ({ className }) => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
-        </svg>
-      );
-
-      const UserIcon = ({ className }) => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="8" r="4" />
-          <path d="M20 21a8 8 0 0 0-16 0" />
-        </svg>
-      );
-
-      const MenuIcon = ({ className }) => (
-        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      );
-
-      const IconByName = ({ name, className }) => {
-        switch (name) {
-          case 'whatsapp': return <WhatsappIcon className={className} />;
-          case 'instagram': return <InstagramIcon className={className} />;
-          case 'user': return <UserIcon className={className} />;
-          case 'menu': return <MenuIcon className={className} />;
-          default: return null;
-        }
-      };
-
-      // --- LinkButton Component ---
-      const LinkButton = ({ text, subtitle, href, primary, onClick, icon, iconName }) => {
-        // Base Premium Styles
-        const baseClasses = "group w-full flex items-center p-4 rounded-xl font-medium transition-all duration-300 ease-out cursor-pointer select-none";
-        
-        // Primary (WhatsApp/Featured) - Pink Gradient
-        const primaryClasses = "bg-gradient-to-r from-brand-pink via-brand-rose to-purple-900 text-white shadow-lg shadow-brand-pink/40 hover:shadow-brand-pink/50 border border-brand-pink/30";
-        
-        // Secondary (Standard Links) - Glassmorphism
-        const secondaryClasses = "glass-button text-gray-100";
-
-        const renderIcon = () => {
-          // Wrapper for icon to ensure alignment
-          const wrapperClass = `mr-4 p-2 rounded-lg transition-all duration-500 ${primary ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-300 group-hover:bg-brand-pink/20 group-hover:text-brand-pink'}`;
-          
-          if (icon) return <div className={wrapperClass}><span className="w-5 h-5 block">{icon}</span></div>;
-          if (iconName) return <div className={wrapperClass}><IconByName name={iconName} className="w-5 h-5" /></div>;
-          return null;
-        };
-
-        const ArrowIcon = () => (
-          <svg className={`w-4 h-4 ml-auto opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 ${primary ? 'text-white' : 'text-gray-400 group-hover:text-brand-pink'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-          </svg>
-        );
-
-        const content = (
-          <React.Fragment>
-            {renderIcon()}
-            <div className="flex flex-col text-left">
-              <span className={`font-kanit tracking-wide text-base ${primary ? 'font-bold' : 'font-medium group-hover:text-brand-pink transition-colors'}`}>{text}</span>
-              {subtitle && <span className="text-xs font-inter text-gray-400 font-light tracking-wider group-hover:text-gray-300 transition-colors">{subtitle}</span>}
-            </div>
-            <ArrowIcon />
-          </React.Fragment>
-        );
-
-        if (href) {
-          return (
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${baseClasses} ${primary ? primaryClasses : secondaryClasses}`}
-            >
-              {content}
-            </a>
-          );
-        }
-
-        return (
-          <button
-            onClick={onClick}
-            className={`${baseClasses} ${primary ? primaryClasses : secondaryClasses}`}
-          >
-            {content}
-          </button>
-        );
-      };
-
-      // --- AboutModal Component ---
-      const AboutModal = ({ isOpen, onClose }) => {
-        useEffect(() => {
-          const handleEsc = (event) => {
-            if (event.key === 'Escape') {
-              onClose();
-            }
-          };
-          window.addEventListener('keydown', handleEsc);
-          return () => {
-            window.removeEventListener('keydown', handleEsc);
-          };
-        }, [onClose]);
-
-        if (!isOpen) return null;
-
-        return (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg transition-all duration-500"
-            onClick={onClose}
-          >
-            <div
-              className="w-full max-w-lg m-4 bg-[#0a0a0a] border border-white/10 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.8)] p-8 relative animate-fade-in max-h-[90vh] overflow-y-auto custom-scrollbar"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Decorative elements */}
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-pink/50 to-transparent"></div>
-              <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-pink/20 to-transparent"></div>
-
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 p-2 text-gray-500 hover:text-white hover:bg-white/10 rounded-full transition-all"
-                aria-label="Fechar modal"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              
-              <div className="mb-8 text-center">
-                  <span className="text-brand-pink uppercase tracking-[0.2em] text-xs font-bold mb-2 block">Claudia Cakes</span>
-                  <h2 className="font-cinzel text-3xl text-white tracking-wide mb-3">
-                  {companyConfig.about.title}
-                  </h2>
-                  <div className="w-16 h-0.5 bg-brand-pink/60 mx-auto rounded-full"></div>
-              </div>
-              
-              <div className="space-y-6 text-gray-300 font-inter font-light leading-relaxed text-sm sm:text-base text-justify">
-                {companyConfig.about.paragraphs.map((paragraph, index) => (
-                  <p key={index} className="first-letter:text-2xl first-letter:text-brand-pink first-letter:font-cinzel first-letter:mr-1">{paragraph}</p>
-                ))}
-              </div>
-              
-              <div className="mt-10 pt-6 border-t border-white/5 text-center flex flex-col items-center">
-                  <img src={companyConfig.logoUrl} alt="Logo Small" className="w-10 h-10 rounded-full opacity-50 grayscale hover:grayscale-0 transition-all mb-3" />
-                  <p className="text-[10px] text-gray-600 font-inter tracking-widest uppercase">
-                      Feito com amor
-                  </p>
-              </div>
-            </div>
-          </div>
-        );
-      };
-
-      // --- Preloader Component (NEW & IMPROVED) ---
-      const Preloader = ({ loading }) => {
-        return (
-            <div className={`preloader-bg ${!loading ? 'preloader-hidden' : ''}`}>
-              <div className="flex flex-col items-center justify-center relative">
-                
-                {/* SVG Circle Animation */}
-                <div className="relative w-40 h-40 flex items-center justify-center">
-                    {/* Rotating outer ring */}
-                    <div className="absolute inset-0 rounded-full border-[1px] border-white/5"></div>
-                    
-                    {/* Pink/Gold Progress Ring */}
-                    <svg className="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(229, 58, 137, 0.2)" strokeWidth="1" />
-                      <circle cx="50" cy="50" r="48" fill="none" stroke="#E53A89" strokeWidth="1" strokeDasharray="60 240" strokeLinecap="round" />
-                    </svg>
-
-                    {/* Inner Glowing Pulse */}
-                    <div className="absolute inset-0 bg-brand-pink/10 rounded-full blur-2xl animate-pulse-slow"></div>
-
-                    {/* Logo */}
-                    <div className="relative w-28 h-28 rounded-full overflow-hidden border border-white/10 shadow-2xl z-10">
-                        <img
-                            src={companyConfig.logoUrl}
-                            alt="Loading..."
-                            className="w-full h-full object-cover opacity-90 brightness-110"
-                        />
-                    </div>
-                </div>
-
-                {/* Text Animation */}
-                <div className="mt-8 text-center space-y-2">
-                    <h2 className="font-cinzel text-2xl tracking-[0.4em] text-white/90 text-glow-pink">CLAUDIA CAKES</h2>
-                    <div className="flex items-center justify-center gap-2">
-                        <div className="w-1 h-1 rounded-full bg-brand-pink animate-bounce" style={{animationDelay: '0s'}}></div>
-                        <div className="w-1 h-1 rounded-full bg-brand-pink animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                        <div className="w-1 h-1 rounded-full bg-brand-pink animate-bounce" style={{animationDelay: '0.4s'}}></div>
-                    </div>
-                </div>
-
-              </div>
-            </div>
-        );
-      };
-
-      // --- Header Component ---
-      const Header = () => {
-        return (
-          <header className="flex flex-col items-center text-center mb-10 relative z-10 animate-fade-in">
-            <div className="relative mb-6 group cursor-default">
-              {/* Ambient Glow behind logo - Pink */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-brand-pink/20 blur-[50px] rounded-full pointer-events-none"></div>
-              
-              <img
-                src={companyConfig.logoUrl}
-                alt={`${companyConfig.name} Logo`}
-                className="relative w-32 h-32 rounded-full object-cover p-1 bg-[#0a0a0a] ring-1 ring-white/10 shadow-2xl animate-float brightness-105 contrast-110"
-              />
-            </div>
-            
-            <div className="space-y-3">
-              <h1 className="font-cinzel font-bold text-4xl sm:text-5xl tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-brand-pink via-white to-gray-400 drop-shadow-sm">
-                {companyConfig.name}
-              </h1>
-              <div className="flex items-center justify-center gap-3 opacity-60">
-                <div className="h-px w-8 bg-gradient-to-r from-transparent to-brand-gold"></div>
-                <div className="w-1.5 h-1.5 rotate-45 bg-brand-gold"></div>
-                <div className="h-px w-8 bg-gradient-to-l from-transparent to-brand-gold"></div>
-              </div>
-              <p className="font-inter text-xs text-gray-400 uppercase tracking-[0.2em] font-light max-w-sm mx-auto leading-relaxed">
-                {companyConfig.tagline}
-              </p>
-            </div>
-          </header>
-        );
-      };
-
-      // --- Main App Component ---
-      const App = () => {
-        const [loading, setLoading] = useState(true);
-        const [isModalOpen, setIsModalOpen] = useState(false);
-
-        useEffect(() => {
-          // Increase loading time slightly to show off animation
-          const timer = setTimeout(() => setLoading(false), 3000);
-          return () => clearTimeout(timer);
-        }, []);
-
-        const handleLinkClick = (action) => {
-          if (action === 'open_modal') {
-            setIsModalOpen(true);
+      // Preloader & Main Content Entrance Trigger
+      window.addEventListener('DOMContentLoaded', () => {
+        // Trigger preloader fadeout after 3 seconds
+        setTimeout(() => {
+          if (preloader) {
+            preloader.classList.add('preloader-hidden');
           }
-        };
+          // Fade in main content
+          if (mainContent) {
+            mainContent.classList.remove('opacity-0', 'translate-y-10');
+            mainContent.classList.add('opacity-100', 'translate-y-0');
+          }
+        }, 3000);
+      });
 
-        return (
-          <React.Fragment>
-            <Preloader loading={loading} />
-            
-            <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-6 pb-12">
-              <div className={`w-full max-w-md mx-auto transition-all duration-1000 ease-out delay-500 ${loading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`}>
-                  
-                  <Header />
-                
-                  <main className="space-y-6 flex flex-col items-center relative z-10">
-                    
-                    {/* Highlight Card - WhatsApp Palmeira */}
-                    <div className="w-full relative group">
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-pink to-purple-900 rounded-2xl opacity-40 group-hover:opacity-70 blur transition duration-500"></div>
-                        <div className="relative bg-[#080808] border border-white/5 rounded-2xl p-4 flex flex-col items-center overflow-hidden">
-                            {/* Glass shine effect */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[40px] -translate-y-1/2 translate-x-1/2 rounded-full pointer-events-none"></div>
+      // Modal Functions
+      function openModal() {
+        if (aboutModal && aboutModalContent) {
+          aboutModal.classList.remove('hidden');
+          // Micro delay for transition
+          setTimeout(() => {
+            aboutModal.classList.remove('opacity-0');
+            aboutModalContent.classList.remove('scale-95');
+            aboutModalContent.classList.add('scale-100');
+          }, 10);
+        }
+      }
 
-                            {companyConfig.offerImageUrl && (
-                                <div className="w-full mb-4 overflow-hidden rounded-lg border border-white/5 shadow-2xl relative">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                                    <img 
-                                        src={companyConfig.offerImageUrl} 
-                                        alt="Destaque" 
-                                        className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
-                                    />
-                                    <div className="absolute bottom-3 left-3 z-20">
-                                        <span className="bg-brand-pink/90 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider backdrop-blur-sm">Promoção</span>
-                                    </div>
-                                </div>
-                            )}
-                            <div className="w-full text-center mb-1">
-                                <h3 className="font-cinzel text-white text-lg">Faça seu Pedido</h3>
-                                <p className="font-inter text-gray-400 text-xs mb-4 font-light">Whatsapp - Palmeira dos Índios</p>
-                            </div>
-                            <LinkButton 
-                                text="Iniciar Atendimento"
-                                subtitle="Clique para falar conosco"
-                                href={companyConfig.whatsappLinkMain}
-                                primary={true}
-                                icon={<WhatsappIcon className="w-5 h-5" />}
-                            />
-                        </div>
-                    </div>
+      function closeModal() {
+        if (aboutModal && aboutModalContent) {
+          aboutModal.classList.add('opacity-0');
+          aboutModalContent.classList.remove('scale-100');
+          aboutModalContent.classList.add('scale-95');
+          // Wait for transition before hiding completely
+          setTimeout(() => {
+            aboutModal.classList.add('hidden');
+          }, 300);
+        }
+      }
 
-                    {/* Elegant Divider */}
-                    <div className="w-full flex items-center justify-center py-2 opacity-50">
-                       <div className="h-px w-24 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
-                       <span className="mx-2 text-[10px] text-gray-600 tracking-widest uppercase">Mais Opções</span>
-                       <div className="h-px w-24 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
-                    </div>
-                    
-                    {/* Main Links List */}
-                    <div className="w-full space-y-3">
-                      {mainLinks.map((link, index) => (
-                        <div 
-                          key={link.id}
-                          className="animate-fade-in"
-                          style={{ animationDelay: `${(index + 2) * 150}ms` }}
-                        >
-                          <LinkButton 
-                            text={link.text}
-                            subtitle={link.subtitle}
-                            href={link.href}
-                            primary={link.primary}
-                            iconName={link.iconName}
-                            onClick={() => handleLinkClick(link.action)}
-                          />
-                        </div>
-                      ))}
-                    </div>
+      // Event Listeners
+      if (btnAbout) btnAbout.addEventListener('click', openModal);
+      if (btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
+      
+      // Close modal on click outside of content
+      if (aboutModal) {
+        aboutModal.addEventListener('click', (e) => {
+          if (e.target === aboutModal) {
+            closeModal();
+          }
+        });
+      }
 
-                  </main>
-              </div>
-              
-              <AboutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-            </div>
-          </React.Fragment>
-        );
-      };
-
-      // --- Mount the App ---
-      const rootElement = document.getElementById('root');
-      const root = ReactDOM.createRoot(rootElement);
-      root.render(
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      );
+      // Close modal on Escape key
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
     </script>
 </body>
 </html>
